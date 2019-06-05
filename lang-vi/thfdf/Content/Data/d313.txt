@@ -1,0 +1,13 @@
+﻿自0]Xem ra nơi này chính là cổng vào dương quán nhỉ.
+敌23]Ngươi là ai hả?
+自0]Ta là Vu nữ đại diện của Thủ Thỉ Thần Xã đây.
+敌21]Lại là vu nữ nữa?
+自2]Hể? Trước đây ngươi còn từng thấy vu nữ khác sao?
+敌22]Không những từng thấy mà còn từng đấu nhau nữa đó.
+自0]Nói chung ta muốn tiến vào điều tra một lát thôi.
+敌24]Thứ lỗi, ta không cho phép ngươi tiến vào đâu.
+自2]Vu nữ tự có biện pháp của vu nữ, dẫu sao ngươi cũng là yêu quái thôi.
+MUSIC
+敌25]Yêu quái không phải dễ chọc đâu.
+自1]Nếu mà dễ chọc thì đã chẳng cần thiết phải thoái trị rồi!
+PAUSE

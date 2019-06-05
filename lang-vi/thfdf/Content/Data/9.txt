@@ -1,0 +1,33 @@
+﻿6
+Cảm ơn Bạn Giúp đỡ：Vào game.
+Rất vui Gặp bạn：Bắt đầu phần chơi một lần.
+Vòng thứ nhất：Phá ván một lần mà không dùng continue.
+Toàn nhân vật Phá đảo：Yêu cầu tất cả nhân vật phá ván một lần không dùng continue.
+Phá đảo Toàn độ khó：Yêu cầu phá ván một lần không dùng continue tất cả độ khó bằng nhân vật bất kì.
+Làm bá Ảo Tưởng Hương：Yêu cầu bằng tất cả nhân vật phá ván tất cả độ khó một lần không dùng continue.
+16
+Chứng kiến Sự biến mất của Ngân hà：Kiên trì đến 9 giây cuối cùng của Lỗ đen "Trái tim Ngân hà" hoặc "Ngân Hà Tai Biến".
+Trăm Phát Không Trúng：Chỉ né trong spellcard Băng Phù "Tốc Đống Quang Đạn Trăm Phát Trăm Trúng" mà không bị hoặc làm gì khác.
+Tiềm Lực Bộc Phát：Bắt được spell Cái kết "Lễ hội Ác quỷ" dưới điều kiện không MISS không BOMB.
+Sự điên rồ của Ác quỷ：Kiên trì đến 5 giây cuối cùng của non-spell cuối cùng của Flandre Scarlet.
+Đột phá 200 triệu điểm số：Cán mốc 200 triệu điểm số ở độ khó Hard trở lên.
+Vô Kế Khả Thi：Chỉ né trong spell "Sát ý Giấu trong Bài" mà không bị hoặc làm gì khác.
+Chẳng mảy Tổn thương：Phá ván không MISS với độ khó bất kì.
+Thời cơ Tuyệt hảo：Công phá và bắt được spellcard bất kì ngay trước khi bộ đếm giờ kết thúc (1 giây) ở độ khó Normal trở lên.
+Phiêu phiêu：Bắt được 3 spellcard bất kì từ độ khó Normal trở lên mà không dùng tốc độ chậm (focusing).
+Phản xạ Có điều kiện：Bắt đầu phần chơi ở độ khó bất kì, rồi dùng DEATH-BOMB cho mỗi lần MISS cho đến khi phá ván.
+Không sợ Mưa gió：Giữ bất động trong ít nhất 5 giây dưới tình huống số đạn đạt ít nhất 500 viên trên cùng màn hình.
+Người sống sót sau Bão táp：Chỉ né trong spell Hồng Dạ "Xoáy nước Sát nhân" mà không bị hoặc làm gì khác.
+Nổ san bằng Ảo Tưởng Hương：Hạ gục BOSS bất kì mà chỉ sử dụng BOMB ở độ khó bất kì.
+Tràn đầy Tự tin：Hạ gục BOSS bất kì cuối màn từ sau Stage 1 trở đi ở độ khó cao nhất mà không sử dụng BOMB.
+Chất đầy mà Về：Bắt được tất cả spellcard ở độ khó bất kì từ Normal trở lên bằng nhân vật bất kì.
+Bắt hết Spellcard Khiêu chiến：Bắt được tất cả spellcard trong Spellcard Challenge bằng nhân vật bất kì.
+8
+Nghị lực Đáng sợ：Số lần chơi nhân vật bất kì ít nhất 100 lần.
+Bất chùn Bất khuất：Phá ván game dưới tình huống không thể continue nữa ở độ khó bất kì.
+Cùng đường Bí lối：Cố tránh đạn trong ít nhất 10 giây ở phần trên màn hình ở spellcard bất kì.
+Một cái cũng Không để rơi：Hút điểm ít nhất 50 lần trong vùng thu thập item trong một phần chơi.
+Sượt đạn Thấy Khoái cảm：Số đạn sượt ít nhất 20000 trong một phần chơi.
+Si cuồng Đạn mạc：Tổng thời gian các phần chơi ít nhất 30 giờ.
+Âm nhạc Chính là Cuộc sống：Lưu lại trong Music Room ít nhất 30 phút.
+Mài sắt Nên kim：Bắt được spellcard khiêu chiến bất kì ít nhất một lần khi đã khiêu chiến spellcard đó ít nhất 100 lần.

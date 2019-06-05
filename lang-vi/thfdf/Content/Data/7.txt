@@ -1,0 +1,39 @@
+﻿5
+Nhiễu Phù "Hắc Ám Phân Giải" 12 0
+Lỗ đen "Quang tử Cắn nuốt" 12 1
+Dạ Phù "Đại Hỏa Tinh Hà" 12 2
+Quang Phù "Quang Mạch – Tinh Tán" 12 3
+"Bụi sao Vụn vỡ" 12 4
+3
+"Suối Băng Long lánh Tuôn trào Dữ dội" 22 5
+"Dấu chân Đóng băng" 22 6
+"Xoay tròn đi! Hỡi vầng băng!" 22 7
+4
+Liên Phù "Địa Dũng Kim Liên" 32 8
+Thái Phù "Lưu Quang – Dật Thái" 32 9
+Vồng Phù "Hoa Hỏa Liễu Loạn" 32 10
+"Nguyệt Ảnh Cuồng Lan" 32 11
+5
+Ác Ý "Cho kẹo hay Bị hẹo" 43 12
+"Đấu trường Tanh máu" 43 13
+Ma Pháp "Nguồn Địa nhiệt Jack Đèn lồng" 43 14
+Ác Ý "Cái ôm Chết chóc" 43 15
+"Jack Đèn lồng Giáng lâm" 43 16
+5
+"Sát ý Đậy dưới Bài" 52 17
+Thời Phù "Thời Đoạn Tiêu Thất" 52 18
+Kỳ Thuật "Không Gian Biến Hoán Thuật" 52 19
+"Sự sợ hãi trong Khe hở Thời gian" 52 20
+Kỳ Thuật "Ma thuật Mũi dao" 52 21
+5
+Mệnh Vận "Giao quấn – Nghịch phản chi Mệnh" 63 22
+Thiên Phạt "Mưa máu Đỏ tanh" 63 23
+Mệnh Vận "Mệnh vận Song song" 63 24
+Hồng Dạ "Xoáy nước Sát nhân" 63 25
+"Bất Dạ Mê Thành" 63 26
+5
+Cấm Đạn "Hầm ngục Mân côi" 74 27
+Cấm Kị "Xoáy nước Mắc nạn" 74 28
+"Trò chơi Vầng mệnh: Hòm rỗng Số 13" 74 29
+Cấm Kị "Tang lễ Cô đơn" 74 30
+Cấm Kị "Lævateinn" 74 31

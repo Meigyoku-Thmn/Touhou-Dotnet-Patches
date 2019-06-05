@@ -1,0 +1,13 @@
+﻿自2]Ủa, không phải ả kia à?
+敌02]Ngươi là con người?
+自3]Biết bao lâu rồi ngươi chưa từng thấy người sống hả.
+敌00]Con người đâu sống sót được bao lâu trong bóng tối đâu.
+自0]Giờ ta chỉ có muốn đi tiếp cho mau thôi.
+MUSIC
+敌01]Xem ra ngươi vẫn chưa biết chuyện gì đang xảy ra nhỉ.
+自0]Vậy hãy khiến ta hiểu rõ thử xem nào!
+PAUSE
+敌01]Không ngờ rằng lợi hại như vậy.
+自1]Do ngươi quá yếu đó chứ?
+敌00]Chưa chắc đâu nhé~
+自1]Mau tránh ra ta đi.

@@ -1,0 +1,12 @@
+﻿自1]Khụ khụ… Không khí bên ngoài gần đây vẩn đục vậy sao…
+敌03]Có vẻ là ngươi rất lợi hại đó.
+自0]Nếu mà ta không đoán sai, ngươi hẳn là đã chịu ảnh hưởng của nơi này.
+敌00]Bởi vì có một cái gì đó đang có hấp dẫn ta đến nơi này đó.
+自0]Nhưng mà trên người ngươi hình như đang có tỏa ra hơi khí kỳ lạ…
+MUSIC
+自0]Xem ra là cần phải giúp ngươi thanh trừ một lát vậy.
+敌00]Muốn động thủ sao? Vừa đẹp, cho ta lĩnh giáo ma pháp của ngươi đi!
+PAUSE
+敌01]Quả nhiên rất lợi hại đấy.
+自0]Đây chỉ mới là bề nổi của tảng băng mà thôi.
+敌00]Đáng tiếc mục tiêu của ta không phải ngươi, mà là dương quán đằng trước cơ.

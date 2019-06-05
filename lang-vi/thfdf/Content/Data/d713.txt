@@ -1,0 +1,24 @@
+﻿自2]Kỳ quặc thật, nơi này làm sao còn có nhiều yêu quái như vậy.
+敌60]Úi, 'người sống' xuất hiện rồi!
+自2]Vụ gì thế này? Đột nhiên nhô ra đây.
+敌60]Ta là Flandre Scarlet - Ác ma trú ở nơi này.
+敌60]Ngươi đến từ đâu đó?
+自0]Ta là Vu nữ đến từ Thủ Thỉ Thần Xã, tới điều tra dị biến một lát.
+敌62]Hể, đó là cái gì dzậy?
+自2]Chưa từng thấy sao… Xem ra là bị nhốt ở nơi này rất lâu rồi.
+敌60]Chính xác rất lâu rồi, gần 500 năm rồi đó.
+自2]Lâu như vậy thì e rằng thị lực đã thoái hóa rồi.
+敌62]Thị lực lại là cái gì chứ?
+自2]Xem ra ngươi hoàn toàn không biết về tình hình bên ngoài à.
+敌60]Ta chỉ muốn có người có thể cùng ta chơi trò chơi đạn mạc thôi.
+自0]Bây giờ người mà ghiền chơi game thì nhiều lắm.
+敌60]Không có trò chơi, cuộc sống không còn niềm vui nữa.
+自3]Thiệt là như vậy sao?
+MUSIC
+敌60]Vì vậy hãy cùng ta chơi đi!
+自2]Xem ra chỉ có thể cùng ngươi chơi nhể.
+PAUSE
+敌60]Thiếu chút nữa thì ắt thắng rồi…
+敌60]Phen này lại phải bắt đầu buồn tẻ nữa thôi.
+自0]Ngươi nên đi ngắm nhìn thế giới bên ngoài nhiều hơn đi.
+自0]Cái thế giới này đâu chỉ có trò chơi không thôi đâu.

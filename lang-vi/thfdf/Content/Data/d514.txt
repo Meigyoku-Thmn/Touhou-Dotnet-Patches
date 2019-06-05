@@ -1,0 +1,21 @@
+﻿敌40]Trễ thế này rồi mà ngài không lưu lại ở thư viện sao?
+自0]Thư viện cần quét dọn một lát cho sạch rồi.
+敌40]Buổi sáng tôi đã quét dọn sạch rồi mà, chẳng lẽ…
+自0]Đã rối tinh rối mù cả rồi.
+敌40]Cũng không biết tên kia có đang coi cửa đàng hoàng hay không đây.
+自0]Ngươi không cảm thấy trong không khí có vài cái khác thường sao?
+敌40]Khác thường? Tôi hoàn toàn không hề cảm thấy được gì.
+自1]Dẫu sao ngươi cũng không phải là yêu quái nhỉ.
+自0]Nói lại thì Remilia đang làm gì thế?
+敌45]Tôi không biết, nhưng ngài ấy bảo là chuyện rất quan trọng.
+自0]Nhắc đến thì, ta phát hiện hơi khí kỳ lạ đang di chuyển về bên kia.
+自0]Xem ra cần phải hỏi cho rõ bà này rồi…
+敌41]Cái này…
+敌41]Đại tiểu thư đã căn dặn qua, bất kỳ ai cũng không thể tự tiện đi vào đâu.
+自1]Thế sao? Như vậy thì càng khả nghi nữa…
+自0]Cho nên không có đường nào khả dĩ để đi vào rồi à?
+MUSIC
+敌40]Xem ra biện pháp để cho ngài đi vào thì chỉ còn nước đánh bại tôi rồi.
+敌40]Lời căn dặn của đại tiểu thư, tôi không thể tùy tiện làm trái được.
+自2]Lời tuy như thế, nhưng ta cũng không thể để mặc cô ta làm càn được.
+PAUSE

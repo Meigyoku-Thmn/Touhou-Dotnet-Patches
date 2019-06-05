@@ -1,0 +1,20 @@
+﻿敌61]Cuối cùng cũng có 'người sống' xuất hiện rồi!
+自1]Vừa tới là liền nói lời kiểu vậy, cảm thấy rất không ổn thế nào ấy!
+敌60]Té ra là người quen kìa~
+自0]Những tưởng rằng trí nhớ ngươi sẽ rất kém cơ.
+敌60]Số người có thể chơi cùng ta chỉ đếm được trên đầu ngón tay thôi.
+自2]Quả nhiên vẫn chỉ là một đứa con nít.
+敌60]Thực sự đợi ở nơi này hiu quạnh quá à, ta muốn ra ngoài.
+自4]Chi bằng ta dạy ngươi cách để lẻn ra ngoài~
+敌60]Như vậy đại tỷ tỷ sẽ trừng phạt ta đó.
+自0]Chỉ cần không để chị ấy phát hiện chẳng là được rồi?
+敌60]Đó là điều bất khả thi đó.
+自1]Thật là một bà chị phiền toái á…
+MUSIC
+敌61]Vậy nên chơi cùng ta một lần nữa đi!
+敌63]Lần trước không cẩn thận để ngươi thắng mất rồi, lần này sẽ không để ngươi được mặc sức đâu.
+自4]Nói không biết chừng đâu đấy.
+PAUSE
+敌64]Thiếu chút nữa thì có thể thắng rồi…
+自2]Dám cược thì dám chịu đi chứ.
+敌64]Như vậy lại phải một thân một mình nữa rồi.

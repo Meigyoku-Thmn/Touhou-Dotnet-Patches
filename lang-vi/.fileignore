@@ -1,0 +1,8 @@
+# Regular Expression
+lang-vi\.sln
+packages\\*
+thfdf\\bin\\*
+thfdf\\obj\\*
+thfdf\\Properties\\*
+thfdf\\*\.csproj
+\.fileignore

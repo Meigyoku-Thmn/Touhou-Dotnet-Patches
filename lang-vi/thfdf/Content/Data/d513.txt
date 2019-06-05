@@ -1,0 +1,19 @@
+﻿自2]Cuối cùng cũng ra khỏi cái chốn âm u kia rồi.
+敌40]Nhân lúc còn bây giờ, hãy thưởng thức cảnh đêm mỹ lệ này cho tốt đi.
+自2]A, ngươi mặc đồ hầu gái đây chẵng lẽ là đang cosplay?
+敌41]Thật là vô lễ.
+敌41]Tôi là Izayoi Sakuya - Trưởng hầu gái nơi này.
+自0]Ngươi cũng là yêu quái sao?
+敌40]Tôi là con người cơ.
+自2]Con người?! Tại sao phải lưu lại ở cái chốn tồi tệ nguy hiểm như vầy?
+敌42]Không những là lưu lại ở đây, mà trên thực tế tôi còn phụ trách tất cả công việc đó.
+自0]Vậy ngươi là thủ hạ của yêu quái?
+敌40]Nói ra thì dài dòng đấy.
+自0]Chà, thôi vậy, ta đến đây tìm ngọn nguồn của dị biến.
+敌40]Vậy xem ra cô đến không đúng lúc nhỉ.
+自0]Như vậy thì thực là không được đâu, ta cũng đã cất công chạy xa như này…
+MUSIC
+自3]Không để ta thấy BOSS cuối thì ta sẽ không chịu đi đâu!
+敌45]Vậy thì thử tí xem ngươi có thể thoát khỏi ta hay không nào.
+敌45]Tiện thể cho ngươi nếm trải cảm giác bị thời gian trói buộc!
+PAUSE

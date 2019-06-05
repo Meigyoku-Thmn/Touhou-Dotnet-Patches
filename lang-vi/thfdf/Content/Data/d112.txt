@@ -1,0 +1,15 @@
+﻿自0]Cái tên kỳ quặc, chưa từng thấy ngươi bao giờ.
+敌02]Ngươi là con người?
+自2]Đúng thế!
+敌00]Vậy thì ngươi không nên tới nơi này đâu.
+自3]Ể?
+MUSIC
+敌00]Xem ra ngươi không biết thế nào là cảm giác nguy cơ cập kề nhỉ…
+自4]Chỗ này tối quá à, ta muốn vọt qua rồi!
+PAUSE
+敌01]Không ngờ rằng lợi hại như vậy.
+自2]Khà khà, không tốn mảy may sức lực.
+敌00]Ngươi có bị cái hơi khí kỳ lạ hấp dẫn mà đến đây không?
+自4]Ta đến điều tra dị biến mà.
+敌00]Theo ta quan sát, thì tòa dương quán đằng xa kia rất khả nghi đó.
+自0]Nơi đó sao? Quen thuộc quá rồi!

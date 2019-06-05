@@ -1,0 +1,17 @@
+﻿自1]Ta rời đi trong thời gian không bao lâu mà nơi này liền rối beng rồi nhỉ.
+敌31]Ngài Patchouli, cuối cùng ngài cũng trở về rồi…
+自0]Làm sao.. ngươi cũng dính phải làn hơi khí kỳ lạ kia rồi.
+敌32]Hể? Là sao?
+自0]Trong khi dùng ma pháp để lọc không khí bên ngoài, ta đã phát hiện một vài thành phần bất minh…
+自0]Những thành phần này tích tụ trên người yêu quái, hình như sẽ khiến năng lực của yêu quái tạm thời biến cường rất nhiều…
+自0]Nhưng hiển nhiên không phải điều tốt đâu.
+敌32]Hể? Nếu mà như vậy thì phải làm sao?
+MUSIC
+自0]Chỉ cần chiến đấu với ta là được thôi.
+敌30]Chiến đấu?
+自0]Ta có thể thanh trừ hết hơi khí trên người ngươi.
+自0]Bởi vì nếu mà để nó ứ đọng quá nhiều, nói không chừng thì ngươi sẽ cuồng loạn.
+敌30]Hể?! Vậy tôi phải chiến đấu như thế nào chứ?
+自0]Hãy cố gắng sử dụng ma pháp mà ta dạy ngươi đi.
+敌32]Như vậy có thực là ổn không đây…
+PAUSE
