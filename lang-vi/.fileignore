@@ -6,3 +6,5 @@ thfdf\\obj\\*
 thfdf\\Properties\\*
 thfdf\\*\.csproj
 \.fileignore
+\.gitignore
+\.vs\\*

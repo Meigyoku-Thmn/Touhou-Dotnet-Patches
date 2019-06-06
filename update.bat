@@ -1,0 +1,1 @@
+cscs -l:0 Dotnet-Runtime-Patcher/Update-Files.cs
