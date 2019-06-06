@@ -2,7 +2,7 @@
    // CRC32 Checksum for each file, we use this as a way to know if there is any changed file.
    "versions.jsonc": 2724459197,
    "thfdf/Detours.cs": 261787880,
-   "thfdf/Main.cs": 1985751653,
+   "thfdf/Main.cs": 3003173582,
    "thfdf/Precompiler.cs": 2728611973,
    "thfdf/Resource.cs": 3713198803,
    "thfdf/Transpilers.cs": 423187888,
