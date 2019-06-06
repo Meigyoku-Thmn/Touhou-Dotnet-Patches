@@ -1,6 +1,7 @@
 //css_import Detours.cs
 //css_import Transpilers.cs
 //css_import Types.cs
+//css_import Resource.cs
 using System;
 using System.Runtime.InteropServices;
 namespace DotnetPatching {
