@@ -51,5 +51,15 @@
     <Compile Include="Transpilers.cs" />
     <Compile Include="Types.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Dotnet-Runtime-Patcher\Harmony\Harmony\Harmony.csproj">
+      <Project>{337d58ff-e5ab-4b91-aaeb-e0b349e70554}</Project>
+      <Name>Harmony</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Dotnet-Runtime-Patcher\Main\Dotnet-Runtime-Patcher.csproj">
+      <Project>{48705b2b-c19e-482e-839f-7011803436ad}</Project>
+      <Name>Dotnet-Runtime-Patcher</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
