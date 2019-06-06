@@ -8,42 +8,43 @@ using static Launcher.Launcher;
 using System.Reflection.Emit;
 using System.Drawing;
 using System.Linq;
+using System.Diagnostics;
 
 namespace DotnetPatching {
-   using TranspilerTuple = ValueTuple<Type, string, Type[], string>;
+   using TranspilerTuple = ValueTuple<Type, string, Type[], Type, string, Type[]>;
    using CodeInstructions = IEnumerable<CodeInstruction>;
    using CodeInstructionMap = IDictionary<int, CodeInstructionWrapper>;
-   class Transpiler {
-      static List<TranspilerTuple> OnSetup() {
+   class Transpilers {
+      public static List<TranspilerTuple> OnSetup() {
          return new List<TranspilerTuple>() {
             // 5 lines of description in music room, align for more space
-            (EntranceT, "Load", null, nameof(LoadMethodOfEntranceTranspiler)),
+            (EntranceT, "Load", null, typeof(Transpilers), nameof(LoadMethodOfEntranceTranspiler), null),
             // bless image fullscreen
-            (GameT, "Init", null, nameof(InitMethodOfGameTranspiler)),
+            (GameT, "Init", null, typeof(Transpilers), nameof(InitMethodOfGameTranspiler), null),
             // bless image fullscreen
             // 5 lines of description in music room, align for more space
-            (EntranceT, "Draw", null, nameof(DrawMethodOfEntranceTranspiler)),
+            (EntranceT, "Draw", null, typeof(Transpilers), nameof(DrawMethodOfEntranceTranspiler), null),
             // The MeasureString method is horrible for trailing space character (bigger width than real width)
-            (SpriteFontXT, "addTex", null, nameof(AddTexTranspiler)),
+            (SpriteFontXT, "addTex", null, typeof(Transpilers), nameof(AddTexTranspiler), null),
             // Fix The Line Break Algorithm in Achievement Screen
-            (SPECIALT, "Draw", null, nameof(DrawMethodOfSPECIALTranspiler)),
+            (SPECIALT, "Draw", null, typeof(Transpilers), nameof(DrawMethodOfSPECIALTranspiler), null),
             // Make the character's portraits on top of ui frame
-            (GameT, "SDraw", null, nameof(DrawMethodOfGameTranspiler)),
+            (GameT, "SDraw", null, typeof(Transpilers), nameof(DrawMethodOfGameTranspiler), null),
             // BossList.xna hack to enlarge canvases
-            (BonusT, "Draw", null, nameof(DrawMethodOfBonus)),
-            (StageclearT, "Draw", null, nameof(DrawMethodOfStageclear)),
+            (BonusT, "Draw", null, typeof(Transpilers), nameof(DrawMethodOfBonus), null),
+            (StageclearT, "Draw", null, typeof(Transpilers), nameof(DrawMethodOfStageclear), null),
             // Achivrate position and sourceRectangle
-            (SPECIALT, "Texture", null, nameof(TextureMethodOfSPECIAL)),
+            (SPECIALT, "Texture", null, typeof(Transpilers), nameof(TextureMethodOfSPECIAL), null),
             // Playdata position and sourceRectangle
-            (PLAYDATAT, ".ctor", TypeL(Texture2DT, SpriteT, SpriteT, SpriteT, SpriteT), nameof(PLAYDATAConstructor)),
+            (PLAYDATAT, ".ctor", TypeL(Texture2DT, SpriteT, SpriteT, SpriteT, SpriteT), typeof(Transpilers), nameof(PLAYDATAConstructor), null),
             // Translate 终 in Replay Saving Screen and Record Saving Screen
-            (RecordSaveT, ".ctor", TypeL(PlayDataT, IntT, LongT), nameof(RecordSaveConstructor)),
-            (ReplaySaveT, ".ctor", TypeL(RecordManagerT, IntT, LongT, IntT, IntT, IntT), nameof(ReplaySaveConstructor1)),
-            (ReplaySaveT, ".ctor", TypeL(RecordManagerT, IntT, LongT, IntT, IntT, IntT, IntT), nameof(ReplaySaveConstructor2)),
+            (RecordSaveT, ".ctor", TypeL(PlayDataT, IntT, LongT), typeof(Transpilers), nameof(RecordSaveConstructor), null),
+            (ReplaySaveT, ".ctor", TypeL(RecordManagerT, IntT, LongT, IntT, IntT, IntT), typeof(Transpilers), nameof(ReplaySaveConstructor1), null),
+            (ReplaySaveT, ".ctor", TypeL(RecordManagerT, IntT, LongT, IntT, IntT, IntT, IntT), typeof(Transpilers), nameof(ReplaySaveConstructor2), null),
             // Adjust stagetitle metrics
-            (TitleT, "Draw", null, nameof(DrawMethodOfTitle)),
+            (TitleT, "Draw", null, typeof(Transpilers), nameof(DrawMethodOfTitle), null),
             // Adjust 31.xna metrics
-            (EDT, "Draw", null, nameof(DrawMethodOfED)),
+            (EDT, "Draw", null, typeof(Transpilers), nameof(DrawMethodOfED), null),
          };
       }
       static CodeInstructions DrawMethodOfED(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
@@ -192,7 +193,7 @@ namespace DotnetPatching {
          return instructions;
       }
       static CodeInstructions AddTexTranspiler(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
-         var myMeasureStringMethod = AccessTools.Method(typeof(Transpiler), nameof(MeasureString));
+         var myMeasureStringMethod = AccessTools.Method(typeof(Transpilers), nameof(MeasureString));
          var targetInstr = instrByOffsets[0x0000002e];
          targetInstr.cdInstr.opcode = OpCodes.Call;
          targetInstr.cdInstr.operand = myMeasureStringMethod;
@@ -207,7 +208,7 @@ namespace DotnetPatching {
          var targetInstr = instrByOffsets[0x00000ee7];
          var ldloc_index = targetInstr.index;
          var str_local_index = ((LocalBuilder)targetInstr.cdInstr.operand).LocalIndex;
-         var InsertLineBreakMethod = AccessTools.Method(typeof(Transpiler), nameof(InsertLineBreak));
+         var InsertLineBreakMethod = AccessTools.Method(typeof(Transpilers), nameof(InsertLineBreak));
          var insertedInstructions = new List<CodeInstruction>() {
             new CodeInstruction(OpCodes.Ldloca, (short)str_local_index),
             new CodeInstruction(OpCodes.Call, InsertLineBreakMethod),

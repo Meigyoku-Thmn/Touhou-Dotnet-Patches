@@ -11,22 +11,24 @@ using System.Runtime.InteropServices;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Collections.Generic;
+using System.Diagnostics;
+
 namespace DotnetPatching {
-   using PatchTuple = ValueTuple<Type, string, Type[], string>;
+   using PatchTuple = ValueTuple<Type, string, Type[], Type, string, Type[]>;
    class Detours {
       public static List<PatchTuple> OnSetup() {
          return new List<PatchTuple>() {
             // For replace game resource on the fly
-            (CryT, "Decry", TypeL(StringT, IntT), nameof(Decry)),
-            (CryT, "Decry", TypeL(StringT), nameof(Decry0)),
+            (CryT, "Decry", TypeL(StringT, IntT), typeof(Detours), nameof(Decry), null),
+            (CryT, "Decry", TypeL(StringT), typeof(Detours), nameof(Decry0), null),
             // To change game title
-            (WindowsGameWindowT, "SetTitle", default(Type[]), nameof(SetTitle)),
+            (WindowsGameWindowT, "SetTitle", null, typeof(Detours), nameof(SetTitle), null),
             // To Set Game Icon, since we use launcher method to hook code
-            (WindowsGameWindowT, "GetDefaultIcon", default(Type[]), nameof(GetDefaultIcon)),
+            (WindowsGameWindowT, "GetDefaultIcon", null, typeof(Detours), nameof(GetDefaultIcon), null),
             // To set the game working directory for XNA
-            (TitleLocationT, "get_Path", default(Type[]), nameof(TitleLocationPath)),
+            (TitleLocationT, "get_Path", null, typeof(Detours), nameof(TitleLocationPath), null),
             // To set the game's fonts
-            (SpriteFontXT, "Initialize", TypeL(FontT, IGraphicsDeviceServiceT, TextRenderingHintT), nameof(SpriteFontXInitialize)),
+            (SpriteFontXT, "Initialize", TypeL(FontT, IGraphicsDeviceServiceT, TextRenderingHintT), typeof(Detours), nameof(SpriteFontXInitialize), null),
          };
       }
       public static void Decry(ref string FileName, ref int type, ref Stream __result, dynamic __state) {
