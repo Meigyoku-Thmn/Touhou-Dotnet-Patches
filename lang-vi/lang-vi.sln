@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dotnet-Runtime-Patcher", ".
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Harmony", "..\Dotnet-Runtime-Patcher\Harmony\Harmony\Harmony.csproj", "{337D58FF-E5AB-4B91-AAEB-E0B349E70554}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Submodules", "Submodules", "{70DCF2A0-8136-4CBC-A578-29BB4DB8D956}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{48705B2B-C19E-482E-839F-7011803436AD} = {70DCF2A0-8136-4CBC-A578-29BB4DB8D956}
+		{337D58FF-E5AB-4B91-AAEB-E0B349E70554} = {70DCF2A0-8136-4CBC-A578-29BB4DB8D956}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {591C8360-090F-4FC6-9B5E-954356BBA9AE}
