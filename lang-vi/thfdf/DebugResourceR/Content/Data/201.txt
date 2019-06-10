@@ -1,0 +1,17 @@
+﻿[0:00:00]PlayMusic(road)
+[0:00:00]LoadBackGround
+[0:00:00]ShowTitle
+//
+[0:05:00]SetBoss(3,3,-1,1,2,0,1)
+[0:05:00]SetBossItems(0,5,0,2,0,0,1,0,0)
+[0:05:00]SetBossCard(0,1,2,12000)
+//
+[0:07:00]SetBoss(4,2,1,0,3,3,2)
+[0:07:00]SetBossItems(0,10,0,8,0,0,1,0,0)
+[0:07:00]SetBossCard(0,13,2,10000)
+[0:07:00]SetBossCard(1,14,4,12500)
+[0:07:00]SetBossCard(0,15,2,11000)
+[0:07:00]SetBossCard(1,16,4,14500)
+[0:07:00]SetBossCard(1,17,4,15000)
+//
+[0:08:00]StageEnd(3)
