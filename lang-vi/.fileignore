@@ -8,3 +8,5 @@ thfdf\\.*\.csproj
 \.fileignore
 \.gitignore
 \.vs\\.*
+.*\.psd
+THMH_VN.csv
