@@ -87,17 +87,8 @@ namespace DotnetPatching {
          return instructions;
       }
       static CodeInstructions DrawMethodOfStageclear(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
-         var FloatT = typeof(float);
-         var Vector2T = XnaAssembly.GetType("Microsoft.Xna.Framework.Vector2");
          var Vector2C = AccessTools.Constructor(Vector2T, TypeL(FloatT, FloatT));
-         var Texture2DT = XnaGraphicsAssembly.GetType("Microsoft.Xna.Framework.Graphics.Texture2D");
-         var RectangleT = XnaAssembly.GetType("Microsoft.Xna.Framework.Rectangle");
-         var NullableRectangleT = typeof(Nullable<>).MakeGenericType(RectangleT);
-         var SpriteEffectsT = XnaGraphicsAssembly.GetType("Microsoft.Xna.Framework.Graphics.SpriteEffects");
-         var ColorT = XnaAssembly.GetType("Microsoft.Xna.Framework.Color");
-         var SBDrawM = AccessTools.Method(
-            XnaGraphicsAssembly.GetType("Microsoft.Xna.Framework.Graphics.SpriteBatch"), "Draw",
-            TypeL(Texture2DT, Vector2T, NullableRectangleT, ColorT, FloatT, Vector2T, FloatT, SpriteEffectsT, FloatT));
+         var SBDrawM = AccessTools.Method(SpriteBatchT, "Draw", TypeL(Texture2DT, Vector2T, NullableRectangleT, ColorT, FloatT, Vector2T, FloatT, SpriteEffectsT, FloatT));
          var instrs = instructions as List<CodeInstruction>;
          {
             var bombTuple = new int[] { 8, 176, 121, 22 };
@@ -151,8 +142,7 @@ namespace DotnetPatching {
       }
       static CodeInstructions DrawMethodOfBonus(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
          var FloatT = typeof(float);
-         var Vector2C = AccessTools.Constructor(
-            XnaAssembly.GetType("Microsoft.Xna.Framework.Vector2"), TypeL(FloatT, FloatT));
+         var Vector2C = AccessTools.Constructor(Vector2T, TypeL(FloatT, FloatT));
          var instrs = instructions as List<CodeInstruction>;
          // sourceRectangle
          var timeTuple = new int[] { 228, 106, 137, 21 };
@@ -223,9 +213,7 @@ namespace DotnetPatching {
          // I just take this from the game itself
          var stringList = new List<string>();
          var source = new List<char>();
-         var MainType = TargetAssembly.GetType("THMHJ.Main");
-         dynamic dfont = Traverse.Create(MainType).Field("dfont").GetValue();
-         // dynamic dfont = AccessTools.Field(MainType, "dfont").GetValue(null);
+         dynamic dfont = Traverse.Create(MainT).Field("dfont").GetValue();
          foreach (var ch in str) {
             source.Add(ch);
             if (dfont.MeasureString(source.ToArray()).X >= 450.0) {

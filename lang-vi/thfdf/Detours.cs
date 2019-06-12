@@ -31,8 +31,8 @@ namespace DotnetPatching {
             (SpriteFontXT, "Initialize", TypeL(FontT, IGraphicsDeviceServiceT, TextRenderingHintT), typeof(Detours), nameof(SpriteFontXInitialize), null),
          };
       }
-      public static void Decry(ref string FileName, ref int type, ref Stream __result, dynamic __state) {
-         dynamic ReentrantDecry = __state;
+      public static void Decry(ref string FileName, ref int type, ref Stream __result, HMState __state) {
+         dynamic ReentrantDecry = __state.ReentrantDelegate;
          var modeFilePath = MapResourcePath(FileName);
          var newFileName = Path.Combine(DebugResourceWorkingPath, modeFilePath);
          var message = "Load debug mod: ";
@@ -49,8 +49,8 @@ namespace DotnetPatching {
             __result = new MemoryStream(File.ReadAllBytes(newFileName));
          }
       }
-      public static void Decry0(ref string FileName, ref Stream __result, dynamic __state) {
-         dynamic ReentrantDecry0 = __state;
+      public static void Decry0(ref string FileName, ref Stream __result, HMState __state) {
+         dynamic ReentrantDecry0 = __state.ReentrantDelegate;
          var modeFilePath = MapResourcePath(FileName);
          var newFileName = Path.Combine(DebugResourceWorkingPath, modeFilePath);
          var message = "Load debug mod: ";
@@ -73,7 +73,6 @@ namespace DotnetPatching {
       public static void SetTitle(Form ___mainForm) {
          if (IsTextSet == true) return;
          var version = Traverse.Create(TargetAssembly.GetType("THMHJ.Main")).Field("version").GetValue();
-         // var version = AccessTools.Field(TargetAssembly.GetType("THMHJ.Main"), "version").GetValue(null);
          SetWindowText(___mainForm.Handle, $"Đông Phương Mạc Hoa Tế ～ Touhou Fantastic Danmaku Festival | Version {version} | Bản Việt hóa Version 1.0");
          IsTextSet = true;
       }
@@ -83,8 +82,8 @@ namespace DotnetPatching {
       public static void TitleLocationPath(ref string __result) {
          __result = Path.GetDirectoryName(TargetAssembly.Location);
       }
-      public static void SpriteFontXInitialize(object __instance, Font font, object gds, TextRenderingHint trh, dynamic __state) {
-         dynamic SFXInitialize = __state;
+      public static void SpriteFontXInitialize(object __instance, Font font, object gds, TextRenderingHint trh, HMState __state) {
+         dynamic SFXInitialize = __state.ReentrantDelegate;
          if (font.OriginalFontName == "Cambria")
             font = new Font("Arial", font.Size, font.Style, font.Unit);
          SFXInitialize((dynamic)__instance, (dynamic)font, (dynamic)gds, (dynamic)trh);
