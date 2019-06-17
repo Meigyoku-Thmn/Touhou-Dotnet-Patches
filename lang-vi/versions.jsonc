@@ -1,7 +1,12 @@
 {
    "582CBCE194163E7767344EC6136E9AB0DC7B87EBEFDCF694C3F97F54F5B102AB": {
       "name": "thfdf",
-      "ver": "_1_05en",
+      "ver": "_1_05_en",
       "size": 921600,
-   }
+   },
+   "88CB24108107E8E87653AD8204DDCD6EBAE79777FEC95720D0C81F40A7D8C64A": {
+      "name": "thfdf",
+      "ver": "_1_04_sc",
+      "size": 623616,
+   },
 }
