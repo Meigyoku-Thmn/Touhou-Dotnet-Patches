@@ -1,0 +1,35 @@
+{
+  "AlterTextCfg": {
+    "AlterFontCfg": {
+      "FPSFont": {
+        "Font": "Cambria, 12px",
+        "Enabled": true
+      },
+      "SpellNameFont": {
+        "Font": "Arial, 16px, style=Bold",
+        "Enabled": true
+      },
+      "SpellStatFont": {
+        "Font": "Cambria, 10px, style=Bold",
+        "Enabled": true
+      },
+      "RestFont": {
+        "Font": "Arial, 16px, style=Bold",
+        "Enabled": true
+      },
+      "ProtagonistLineColor": {
+        "Color": "100, 177, 255",
+        "Enabled": true
+      },
+      "AntagonistLineColor": {
+        "Color": "255, 0, 128",
+        "Enabled": true
+      },
+      "Enabled": true
+    },
+    "UseBlackBorder": true,
+    "Enabled": true
+  },
+  "TachieOnTop": true,
+  "UseSkipPatch": true
+}

@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.IO;
-using System.Windows.Forms;
 
 public class Precompiler {
    public static bool Compile(ref string code, string scriptFile, bool isPrimaryScript, Hashtable context) {

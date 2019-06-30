@@ -1,6 +1,6 @@
 ﻿6
-Cảm ơn Bạn Giúp đỡ：Vào game.
-Rất vui Gặp bạn：Bắt đầu phần chơi một lần.
+Cảm tạ Giúp đỡ：Vào game.
+Gặp mặt Lần đầu：Bắt đầu phần chơi một lần.
 Vòng thứ nhất：Phá ván một lần mà không dùng continue.
 Toàn nhân vật Phá đảo：Yêu cầu tất cả nhân vật phá ván một lần không dùng continue.
 Phá đảo Toàn độ khó：Yêu cầu phá ván một lần không dùng continue tất cả độ khó bằng nhân vật bất kì.
@@ -8,13 +8,13 @@ Làm bá Ảo Tưởng Hương：Yêu cầu bằng tất cả nhân vật phá v
 16
 Chứng kiến Sự biến mất của Ngân hà：Kiên trì đến 9 giây cuối cùng của Lỗ đen "Trái tim Ngân hà" hoặc "Ngân Hà Tai Biến".
 Trăm Phát Không Trúng：Chỉ né trong spellcard Băng Phù "Tốc Đống Quang Đạn Trăm Phát Trăm Trúng" mà không bị hoặc làm gì khác.
-Tiềm Lực Bộc Phát：Bắt được spell Cái kết "Lễ hội Ác quỷ" dưới điều kiện không MISS không BOMB.
-Sự điên rồ của Ác quỷ：Kiên trì đến 5 giây cuối cùng của non-spell cuối cùng của Flandre Scarlet.
+Tiềm Lực Bộc Phát：Bắt được spell Cái kết "Lễ hội Ác ma" dưới điều kiện không MISS không BOMB.
+Sự điên rồ của Ác ma：Kiên trì đến 5 giây cuối cùng của non-spell cuối cùng của Flandre Scarlet.
 Đột phá 200 triệu điểm số：Cán mốc 200 triệu điểm số ở độ khó Hard trở lên.
 Vô Kế Khả Thi：Chỉ né trong spell "Sát ý Giấu trong Bài" mà không bị hoặc làm gì khác.
 Chẳng mảy Tổn thương：Phá ván không MISS với độ khó bất kì.
 Thời cơ Tuyệt hảo：Công phá và bắt được spellcard bất kì ngay trước khi bộ đếm giờ kết thúc (1 giây) ở độ khó Normal trở lên.
-Phiêu phiêu：Bắt được 3 spellcard bất kì từ độ khó Normal trở lên mà không dùng tốc độ chậm (focusing).
+Bồng bềnh：Bắt được 3 spellcard bất kì từ độ khó Normal trở lên mà không dùng tốc độ chậm (focusing).
 Phản xạ Có điều kiện：Bắt đầu phần chơi ở độ khó bất kì, rồi dùng DEATH-BOMB cho mỗi lần MISS cho đến khi phá ván.
 Không sợ Mưa gió：Giữ bất động trong ít nhất 5 giây dưới tình huống số đạn đạt ít nhất 500 viên trên cùng màn hình.
 Người sống sót sau Bão táp：Chỉ né trong spell Hồng Dạ "Xoáy nước Sát nhân" mà không bị hoặc làm gì khác.
