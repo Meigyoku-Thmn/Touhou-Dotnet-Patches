@@ -26,9 +26,9 @@ Kỳ Thuật "Không Gian Biến Hoán Thuật" 52 19
 "Sự sợ hãi trong Khe hở Thời gian" 52 20
 Kỳ Thuật "Ma thuật Mũi dao" 52 21
 5
-Mệnh Vận "Giao quấn – Nghịch phản chi Mệnh" 63 22
+Vận Mệnh "Giao quấn – Nghịch phản chi Mệnh" 63 22
 Thiên Phạt "Mưa máu Đỏ tanh" 63 23
-Mệnh Vận "Mệnh vận Song song" 63 24
+Vận Mệnh "Vận mệnh Song song" 63 24
 Hồng Dạ "Xoáy nước Sát nhân" 63 25
 "Bất Dạ Mê Thành" 63 26
 5

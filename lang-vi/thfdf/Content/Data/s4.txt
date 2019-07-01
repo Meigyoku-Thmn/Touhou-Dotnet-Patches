@@ -15,7 +15,7 @@
 492 Ma Pháp "Bom Jack Lồng đèn"
 494 Ác Mộng "Bóng đè Đỏ tươi"
 495 "Lễ Carnival Ma pháp Nửa đêm"
-496 "Trò ác Khói lửa Lễ Halloween"
+496 "Trò nghịch Khói lửa Lễ Halloween"
 539 "Điệu Van-xơ của Ác ma"
 582 Ma Thuật "Ảo Tượng Tường Vi"
 584 Kỳ Thuật "Nhị Thứ Nguyên Sát Trận"

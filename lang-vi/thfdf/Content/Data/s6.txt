@@ -20,7 +20,7 @@
 19 Kỳ Thuật "Không Gian Biến Hoán Thuật"
 20 "Sự sợ hãi trong Khe hở Thời gian"
 21 Kỳ Thuật "Ma thuật Mũi dao"
-22 Mệnh Vận "Giao quấn – Nghịch phản chi Mệnh"
+22 Vận Mệnh "Giao quấn – Nghịch phản chi Mệnh"
 23 Thiên Phạt "Mưa máu Đỏ tanh"
 24 Mệnh Vận "Mệnh vận Song song"
 25 Hồng Dạ "Xoáy nước Sát nhân"
