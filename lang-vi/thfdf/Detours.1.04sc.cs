@@ -5,6 +5,7 @@ using static Fields;
 using static RuntimePatcher.Launcher;
 using static Types;
 using static Delegates;
+using System.Diagnostics;
 
 namespace DotnetPatching {
    using PatchTuple = ValueTuple<Type, string, Type[], Type, string, Type[]>;

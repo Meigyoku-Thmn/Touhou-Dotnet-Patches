@@ -1,4 +1,4 @@
-﻿using Harmony;
+﻿using HarmonyLib;
 using ReflectionMagic;
 using RuntimePatcher;
 using System;
@@ -59,7 +59,7 @@ namespace DotnetPatching {
             // Adjust spellcard name in gameplay for more pleasant to the eyes
             (CardDisplayT, ".ctor", TypeL(Texture2DT, HashtableArrT, IntT, IntT), typeof(Transpilers), nameof(CardDisplayConstructor), null),
             // stroke border for text, instead of drop shadow
-            // (SpriteBatchT, "Draw", TypeL(Texture2DT, Vector2T, NullableRectangleT, ColorT, FloatT, Vector2T, Vector2T, SpriteEffectsT, FloatT), typeof(Transpilers), nameof(DrawMethodOfSpriteBatch), null),
+             (SpriteBatchT, "Draw", TypeL(Texture2DT, Vector2T, NullableRectangleT, ColorT, FloatT, Vector2T, Vector2T, SpriteEffectsT, FloatT), typeof(Transpilers), nameof(DrawMethodOfSpriteBatch), null),
          })
 #if _1_04_sc
          .Concat(Transpilers_1_04_sc.OnSetup())
