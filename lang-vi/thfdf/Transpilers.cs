@@ -1,142 +1,117 @@
 ﻿using HarmonyLib;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using ReflectionMagic;
 using RuntimePatcher;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Reflection;
 using System.Reflection.Emit;
 using static Constructors;
-using static Delegates;
+using static Fields;
 using static Methods;
 using static Resource;
 using static RuntimePatcher.Helper;
 using static Types;
-using static Fields;
 
 //css_import Transpilers.1.04sc.cs
 namespace DotnetPatching {
+   using System.Diagnostics;
+   using static RuntimePatcher.PatchInfo;
    using CodeInstructionMap = IDictionary<int, CodeInstructionWrapper>;
    using CodeInstructions = IEnumerable<CodeInstruction>;
-   using TranspilerTuple = ValueTuple<Type, string, Type[], Type, string, Type[]>;
-   class Transpilers {
+   using TranspilerTuple = RuntimePatcher.PatchInfo;
+#if _1_05_en
+   using XnaColor = Microsoft.Xna.Framework.Color;
+#elif _1_04_sc
+   using XnaColor = Microsoft.Xna.Framework.Graphics.Color;
+#endif
+   using XnaRectangle = Microsoft.Xna.Framework.Rectangle;
+   partial class Transpilers {
       public static List<TranspilerTuple> OnSetup() {
          return new TranspilerTuple[] {
-            (BoardT, "Draw", null, typeof(Transpilers), nameof(DrawMethodOfBoard), null),
+            PM(BoardDrawM, DrawMethodOfBoardH),
              //5 lines of description in music room
-            (EntranceT, "Load", null, typeof(Transpilers), nameof(LoadMethodOfEntranceTranspiler), null),
+            PM(EntranceLoadM, LoadMethodOfEntranceTranspilerH),
             // bless image fullscreen
-            (GameT, "Init", null, typeof(Transpilers), nameof(InitMethodOfGameTranspiler), null),
+            PM(GameInitM, InitMethodOfGameTranspilerH),
             // bless image fullscreen
              //5 lines of description in music room, align for more space
-            (EntranceT, "Draw", null, typeof(Transpilers), nameof(DrawMethodOfEntranceTranspiler), null),
+            PM(EntranceDrawM, DrawMethodOfEntranceTranspilerH),
             // The MeasureString method is horrible for trailing space character (bigger width than real width)
-            (SpriteFontXT, "addTex", null, typeof(Transpilers), nameof(AddTexTranspiler), null),
+            PM(addTexM, AddTexTranspilerH),
              //Fix The Line Break Algorithm in Achievement Screen
-            (SPECIALT, "Draw", null, typeof(Transpilers), nameof(DrawMethodOfSPECIALTranspiler), null),
+            PM(SPECIALDrawM, DrawMethodOfSPECIALTranspilerH),
          }.Concat(!Resource.Config.TachieOnTop ? new TranspilerTuple[0] : new TranspilerTuple[] {
             // Make the character's portraits on top of ui frame
-            (GameT, "SDraw", null, typeof(Transpilers), nameof(SDrawMethodOfGameTranspiler), null),
+            PM(GameSDrawM, SDrawMethodOfGameTranspilerH),
          }).Concat(new TranspilerTuple[] {
             // BossList.xna hack to enlarge canvases
-            (BonusT, "Draw", null, typeof(Transpilers), nameof(DrawMethodOfBonus), null),
-            (StageclearT, "Draw", null, typeof(Transpilers), nameof(DrawMethodOfStageclear), null),
+            PM(BonusDrawM, DrawMethodOfBonusH),
+            PM(StageclearDrawM, DrawMethodOfStageclearH),
             // Achivrate position and sourceRectangle
-            (SPECIALT, "Texture", null, typeof(Transpilers), nameof(TextureMethodOfSPECIAL), null),
+            PM(SPECIALTextureM, TextureMethodOfSPECIALH),
             // Playdata position and sourceRectangle
-            (PLAYDATAT, ".ctor", TypeL(Texture2DT, SpriteT, SpriteT, SpriteT, SpriteT), typeof(Transpilers), nameof(PLAYDATAConstructor), null),
+            PM(PLAYDATAC, PLAYDATAConstructorH),
             // Translate 终 in Replay Saving Screen and Record Saving Screen
-            (RecordSaveT, ".ctor", TypeL(PlayDataT, IntT, LongT), typeof(Transpilers), nameof(RecordSaveConstructor), null),
-            (ReplaySaveT, ".ctor", TypeL(RecordManagerT, IntT, LongT, IntT, IntT, IntT), typeof(Transpilers), nameof(ReplaySaveConstructor1), null),
-            (ReplaySaveT, ".ctor", TypeL(RecordManagerT, IntT, LongT, IntT, IntT, IntT, IntT), typeof(Transpilers), nameof(ReplaySaveConstructor2), null),
+            PM(RecordSaveC, RecordSaveConstructorH),
+            PM(ReplaySaveC, ReplaySaveConstructor1H),
+            PM(ReplaySaveC2, ReplaySaveConstructor2H),
             // Adjust stagetitle metrics
-            (TitleT, "Draw", null, typeof(Transpilers), nameof(DrawMethodOfTitle), null),
+            PM(TitleDrawM, DrawMethodOfTitleH),
             // Adjust 31.xna metrics
-            (EDT, "Draw", null, typeof(Transpilers), nameof(DrawMethodOfED), null),
+            PM(EDDrawM, DrawMethodOfEDH),
             // Adjust spellcard name in gameplay for more pleasant to the eyes
-            (CardDisplayT, ".ctor", TypeL(Texture2DT, HashtableArrT, IntT, IntT), typeof(Transpilers), nameof(CardDisplayConstructor), null),
-            // stroke border for text, instead of drop shadow
-             (SpriteBatchT, "Draw", TypeL(Texture2DT, Vector2T, NullableRectangleT, ColorT, FloatT, Vector2T, Vector2T, SpriteEffectsT, FloatT), typeof(Transpilers), nameof(DrawMethodOfSpriteBatch), null),
+            PM(CardDisplayC, CardDisplayConstructorH),
+            PM(DialogDrawM, DrawMethodOfDialogH),
          })
 #if _1_04_sc
-         .Concat(Transpilers_1_04_sc.OnSetup())
+         .Concat(OnSetup_1_04_sc())
 #endif
          .ToList()
          ;
       }
-      static CodeInstructions DrawMethodOfSpriteBatch(CodeInstructions instructions, MethodBase originalMethod) {
+      public static CodeInstructions DrawMethodOfDialog(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
          var instrs = instructions as List<CodeInstruction>;
-         instrs.Clear();
-         instrs.AddRange(new CodeInstruction[] {
-            new CodeInstruction(OpCodes.Ldarg_0), // SpriteBatch __instance
-            new CodeInstruction(OpCodes.Ldarg_1), // Texture2D texture
-            new CodeInstruction(OpCodes.Ldarg_2), // Vector2 position
-            new CodeInstruction(OpCodes.Box, Vector2T),
-            new CodeInstruction(OpCodes.Ldarg_3), // Rectangle? sourceRectangle
-            new CodeInstruction(OpCodes.Box, NullableRectangleT), // remember that Nullable<> is struct not class
-            new CodeInstruction(OpCodes.Ldarg, 4), // Color color
-            new CodeInstruction(OpCodes.Box, ColorT),
-            new CodeInstruction(OpCodes.Ldarg, 5), // float rotation
-            new CodeInstruction(OpCodes.Ldarg, 6), // Vector2 origin
-            new CodeInstruction(OpCodes.Box, Vector2T),
-            new CodeInstruction(OpCodes.Ldarg, 7), // Vector2 scale
-            new CodeInstruction(OpCodes.Box, Vector2T),
-            new CodeInstruction(OpCodes.Ldarg, 8), // SpriteEffects effects,
-            new CodeInstruction(OpCodes.Box, SpriteEffectsT),
-            new CodeInstruction(OpCodes.Ldarg, 9), // float layerDepth
-            new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Transpilers), nameof(DrawCharacter))),
-            new CodeInstruction(OpCodes.Ret),
+         // RGB
+#if _1_05_en
+         const int OFFSET1 = 0x041D, OFFSET2 = 0x0422, OFFSET3 = 0x0427, 
+            OFFSET4 = 0x0458, OFFSET5 = 0x045D, OFFSET6 = 0x0462;
+         var alterTextCfg = Resource.Config.AlterTextCfg;
+         var alterFontCfg = alterTextCfg.AlterFontCfg;
+         var protagonistLineColor = alterFontCfg.ProtagonistLineColor;
+         var antagonistLineColor = alterFontCfg.AntagonistLineColor;
+         if (alterTextCfg.Enabled && alterFontCfg.Enabled) {
+            if (protagonistLineColor.Enabled) {
+               var color = protagonistLineColor.ColorI;
+               instrByOffsets[OFFSET1].cdInstr.operand = (float)color.R / 255;
+               instrByOffsets[OFFSET2].cdInstr.operand = (float)color.G / 255;
+               instrByOffsets[OFFSET3].cdInstr.operand = (float)color.B / 255;
+            }
+            if (antagonistLineColor.Enabled) {
+               var color = antagonistLineColor.ColorI;
+               instrByOffsets[OFFSET4].cdInstr.operand = (float)color.R / 255;
+               instrByOffsets[OFFSET5].cdInstr.operand = (float)color.G / 255;
+               instrByOffsets[OFFSET6].cdInstr.operand = (float)color.B / 255;
+            }
+         }
+#endif
+#if _1_04_sc
+         var begin = instrByOffsets[0x02F8];
+         var end = instrByOffsets[0x0425];
+         instrs.RemoveRange(begin.index, end.index - begin.index + 1);
+         var drawDialogM = AccessTools.Method(typeof(Transpilers), nameof(DrawDialog));
+         instrs.InsertRange(begin.index, new CodeInstruction[] {
+            new CodeInstruction(OpCodes.Ldarg_0),
+            new CodeInstruction(OpCodes.Ldarg_1),
+            new CodeInstruction(OpCodes.Call, drawDialogM),
          });
+         instrByOffsets[0x042A].cdInstr.labels = new List<Label>();
+#endif
          return instrs;
       }
-      static float borderSize = 1.5f;
-      static float shiftX = -1;
-      static float shiftY = -1;
-      static void DrawCharacter(object __instance, object texture, object position, object sourceRectangle, object color, float rotation, object origin, object scale, object effects, float layerDepth) {
-         //Action<object> Draw = (pos) => {
-         //var vector = NewVector4(null, VT2_X(null, position), VT2_Y(null, position), VT2_X(null, scale), VT2_Y(null, scale));
-         //InternalDraw(__instance, new object[] { texture, vector, true, sourceRectangle, color, rotation, origin, effects, layerDepth });
-         //};
-         //Draw(position);
-         var vector = Activator.CreateInstance(Vector4T, new object[] {
-            Vector2_XF.GetValue(position),
-            Vector2_YF.GetValue(position),
-            Vector2_XF.GetValue(scale),
-            Vector2_YF.GetValue(scale),
-         });
-         SBInternalDraw.Invoke(__instance, new object[] { texture, vector, true, sourceRectangle, color, rotation, origin, effects, layerDepth });
-         return;
-         //if (!charTextures.Contains(texture) || 
-         //   ((byte)CL_R(null, color) != 0 || (byte)CL_G(null, color) != 0 || (byte)CL_B(null, color) != 0)) {
-         //   // normal flow
-         //   Draw(position);
-         //   return;
-         //}
-         //// we are in character's shadow drawing flow
-         //float X = (float)VT2_X(null, position) + shiftX;
-         //float Y = (float)VT2_Y(null, position) + shiftY;
-         //object newPos;
-         //newPos = NewVector2(null, X - borderSize, Y - borderSize);
-         //Draw(newPos);
-         //newPos = NewVector2(null, X + borderSize, Y - borderSize);
-         //Draw(newPos);
-         //newPos = NewVector2(null, X + borderSize, Y + borderSize);
-         //Draw(newPos);
-         //newPos = NewVector2(null, X - borderSize, Y + borderSize);
-         //Draw(newPos);
-         //newPos = NewVector2(null, X, Y + borderSize);
-         //Draw(newPos);
-         //newPos = NewVector2(null, X, Y - borderSize);
-         //Draw(newPos);
-         //newPos = NewVector2(null, X - borderSize, Y);
-         //Draw(newPos);
-         //newPos = NewVector2(null, X + borderSize, Y);
-         //Draw(newPos);
-      }
-      static CodeInstructions DrawMethodOfBoard(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
+      public static CodeInstructions DrawMethodOfBoard(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
 #if _1_04_sc
          instrByOffsets[0x00F4].cdInstr.operand = GET;
          instrByOffsets[0x01A8].cdInstr.operand = GET;
@@ -166,7 +141,7 @@ namespace DotnetPatching {
          return instrs;
       }
 
-      static CodeInstructions CardDisplayConstructor(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
+      public static CodeInstructions CardDisplayConstructor(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
          var instrs = instructions as List<CodeInstruction>;
 #if _1_04_sc
          var target = instrByOffsets[0x00D4];
@@ -186,8 +161,8 @@ namespace DotnetPatching {
          instrs[target.index].labels = labels;
          return instrs;
       }
-      static readonly dynamic fontpos = NewVector2(null, 418f, 301f);
-      static readonly dynamic defaultSpacing = Vector2_GetZero();
+      static readonly dynamic fontpos = new Vector2(418f, 301f);
+      static readonly dynamic defaultSpacing = Vector2.Zero;
       static readonly float maxSpellWidth = 280.0f;
       // I provide a faster and more accurate spellname metrics calculating method
       static void CalculateSpellNameMetrics(object __instance) {
@@ -200,10 +175,10 @@ namespace DotnetPatching {
             _this.fontpl = originalSpellWidth;
             return;
          }
-         scfont.Spacing = NewVector2(null, (280.0f - originalSpellWidth) / (_this.cardname.Length - 1), 0f);
+         scfont.Spacing = new Vector2((280.0f - originalSpellWidth) / (_this.cardname.Length - 1), 0f);
          _this.fontpl = maxSpellWidth;
       }
-      static CodeInstructions DrawMethodOfED(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
+      public static CodeInstructions DrawMethodOfED(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
          // s.Draw(this.text, new Vector2(60f, (float) (175 + 38 * index)), new Rectangle?(new Rectangle(0, 38 * index, 307, 38)), new Color(1f, 1f, 1f, this.textcolor[index]), 0.0f, Vector2.Zero, 1f, SpriteEffects.None, 0.0f);
          // change 60f to 0f
          // change 307 to 640
@@ -216,7 +191,7 @@ namespace DotnetPatching {
          instrByOffsets[OFFSET2].cdInstr.operand = 640;
          return instructions;
       }
-      static CodeInstructions DrawMethodOfTitle(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
+      public static CodeInstructions DrawMethodOfTitle(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
          // this.tex.rect = this.stage % 2 != 1 ? new Rectangle(380, (this.stage - 1) / 2 * 120, 380, 93) : new Rectangle(0, this.stage / 2 * 120, 380, 93);
          // this.tex.rect = this.stage % 2 != 1 ? new Rectangle(380, 93 + (this.stage - 1) / 2 * 120, 380, 30) : new Rectangle(0, 93 + this.stage / 2 * 120, 380, 30);
          // change 120 to 143
@@ -247,19 +222,19 @@ namespace DotnetPatching {
 #elif _1_04_sc
       static readonly int EndStringOffset = 0x243;
 #endif
-      static CodeInstructions RecordSaveConstructor(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
+      public static CodeInstructions RecordSaveConstructor(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
          instrByOffsets[EndStringOffset].cdInstr.operand = EndString;
          return instructions;
       }
-      static CodeInstructions ReplaySaveConstructor1(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
+      public static CodeInstructions ReplaySaveConstructor1(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
          instrByOffsets[EndStringOffset].cdInstr.operand = EndString;
          return instructions;
       }
-      static CodeInstructions ReplaySaveConstructor2(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
+      public static CodeInstructions ReplaySaveConstructor2(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
          instrByOffsets[EndStringOffset].cdInstr.operand = EndString;
          return instructions;
       }
-      static CodeInstructions PLAYDATAConstructor(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
+      public static CodeInstructions PLAYDATAConstructor(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
          // playdata.position = new Vector2(210f, 408f);
          // change 210f to 0f
 #if _1_05_en
@@ -270,7 +245,7 @@ namespace DotnetPatching {
          instrByOffsets[OFFSET1].cdInstr.operand = 0f;
          return instructions;
       }
-      static CodeInstructions TextureMethodOfSPECIAL(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
+      public static CodeInstructions TextureMethodOfSPECIAL(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
          // this.achivrate.position = new Vector2(480f, 125f);
          // change 480f to 0f
 #if _1_05_en
@@ -281,7 +256,7 @@ namespace DotnetPatching {
          instrByOffsets[OFFSET1].cdInstr.operand = 0f;
          return instructions;
       }
-      static CodeInstructions DrawMethodOfStageclear(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
+      public static CodeInstructions DrawMethodOfStageclear(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
          // must modify from largest offset to smallest offset
          var instrs = instructions as List<CodeInstruction>;
          {
@@ -360,7 +335,7 @@ namespace DotnetPatching {
          }
          return instructions;
       }
-      static CodeInstructions DrawMethodOfBonus(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
+      public static CodeInstructions DrawMethodOfBonus(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
          var instrs = instructions as List<CodeInstruction>;
          // sourceRectangle
          var timeTuple = new int[] { 228, 106, 137, 21 };
@@ -392,7 +367,7 @@ namespace DotnetPatching {
          instrs.RemoveAt(target.index);
          return instrs;
       }
-      static CodeInstructions InitMethodOfGameTranspiler(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
+      public static CodeInstructions InitMethodOfGameTranspiler(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
 #if _1_05_en
          const int OFFSET1 = 0x00b3, OFFSET2 = 0x00b8;
 #elif _1_04_sc
@@ -403,7 +378,7 @@ namespace DotnetPatching {
          instrByOffsets[OFFSET2].cdInstr.operand = 0f;
          return instructions;
       }
-      static CodeInstructions LoadMethodOfEntranceTranspiler(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
+      public static CodeInstructions LoadMethodOfEntranceTranspiler(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
 #if _1_05_en
          const int OFFSET1 = 0x077d, OFFSET2 = 0x07b2, OFFSET3 = 0x07d0, OFFSET4 = 0x07e0;
 #elif _1_04_sc
@@ -419,7 +394,7 @@ namespace DotnetPatching {
          instrByOffsets[OFFSET4].cdInstr.opcode = OpCodes.Ldc_I4_5;
          return instructions;
       }
-      static CodeInstructions DrawMethodOfEntranceTranspiler(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
+      public static CodeInstructions DrawMethodOfEntranceTranspiler(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
 #if _1_05_en
          const int OFFSET1 = 0x0053, OFFSET2 = 0x0058, OFFSET3 = 0x0e11;
 #elif _1_04_sc
@@ -432,7 +407,7 @@ namespace DotnetPatching {
          instrByOffsets[OFFSET3].cdInstr.opcode = OpCodes.Ldc_I4_5;
          return instructions;
       }
-      static CodeInstructions AddTexTranspiler(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
+      public static CodeInstructions AddTexTranspiler(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
 #if _1_05_en
          const int OFFSET1 = 0x002e;
 #elif _1_04_sc
@@ -446,14 +421,14 @@ namespace DotnetPatching {
          return instructions;
       }
       // Graphics.MeasureString's accuracy sucks for space, why StarX hasn't noticed this, I think because it doesn't matter for chinese characters
-      public static SizeF MeasureString(Graphics _this, string text, Font font, PointF origin, StringFormat stringFormat) {
+      public static SizeF MeasureString(Graphics _this, string text, Font font, System.Drawing.PointF origin, StringFormat stringFormat) {
          if (text[0] == ' ') text = " \u200D"; // ZERO-WIDTH JOINER SPACE, trick MeasureString into thinking that text has no trailing space
          return _this.MeasureString(text, font, origin, stringFormat);
       }
       // the line-break algorithm in achievement screen sucks, so I redirect it to the line-break method below
-      static CodeInstructions DrawMethodOfSPECIALTranspiler(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
+      public static CodeInstructions DrawMethodOfSPECIALTranspiler(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
 #if _1_04_sc
-         instructions = Transpilers_1_04_sc.DrawMethodOfSPECIAL(instructions, instrByOffsets);
+         instructions = Transpilers.DrawMethodOfSPECIAL(instructions, instrByOffsets);
 #endif
          var InsertLineBreakMethod = AccessTools.Method(typeof(Transpilers), nameof(InsertLineBreak));
          var instrs = instructions as List<CodeInstruction>;
@@ -561,7 +536,7 @@ namespace DotnetPatching {
        * Move enemy indicator drawing instruction befor character drawing call
        * TODO: viết hướng dẫn chính xác và tường minh cho chỗ này
        */
-      static CodeInstructions SDrawMethodOfGameTranspiler(CodeInstructions instructions, ILGenerator adderIL, CodeInstructionMap instrByOffsets) {
+      public static CodeInstructions SDrawMethodOfGameTranspiler(CodeInstructions instructions, ILGenerator adderIL, CodeInstructionMap instrByOffsets) {
          // must modify from largest offset to smallest offset
          var instrs = instructions as List<CodeInstruction>;
 #if _1_05_en
@@ -663,10 +638,10 @@ namespace DotnetPatching {
 
          return instrs;
       }
-      static readonly dynamic origin = NewVector2(null, 45f, 25f);
+      static readonly dynamic origin = new Vector2(45f, 25f);
       static readonly dynamic none = new EnumConverter(SpriteEffectsT).ConvertFromString("None");
-      static readonly dynamic srcRec = NewNullableRectangle(null, NewRectangle(null, 280, 15, 89, 25));
-      static void DrawEnemyIndicator(object __instance, dynamic spriteBatch) {
+      static readonly dynamic srcRec = new XnaRectangle?(new XnaRectangle(280, 15, 89, 25));
+      static void DrawEnemyIndicator(THMHJ.Game __instance, SpriteBatch spriteBatch) {
          var _this = __instance.AsDynamic();
          if (_this.stm.IsBossed()) {
             float x = _this.stm.GetBosspos().X;
@@ -674,8 +649,8 @@ namespace DotnetPatching {
             if (x >= 50.0f && x <= 390.0f) a = 1f;
             if (x < 50.0f) a = x >= 0.0f ? x / 50f : 0.0f;
             else if (x > 390.0f) a = x <= 440.0f ? (x - 390.0f) / 50.0f : 0.0f;
-            dynamic position = NewVector2(null, x, 482f);
-            dynamic color = NewColor(null, 1f, 1f, 1f, a);
+            Vector2 position = new Vector2(x, 482f);
+            var color = new XnaColor(1f, 1f, 1f, a);
             spriteBatch.Draw(_this.gr.bosslist.RealObject, position, srcRec, color, 0.0f, origin, 1f, none, 0.0f);
          }
       }

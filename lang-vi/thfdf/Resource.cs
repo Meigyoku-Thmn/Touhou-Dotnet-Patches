@@ -1,19 +1,16 @@
+using Microsoft.Xna.Framework;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Dynamic;
-using System.IO;
-using System.Text.RegularExpressions;
-using System.Reflection;
-using System.Windows.Forms;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using Newtonsoft.Json;
 using System.Drawing;
-using System.Xml.Serialization;
-using System.Text;
+using System.IO;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
 
+using XNATexture2D = Microsoft.Xna.Framework.Graphics.Texture2D;
 // this is the best way to implement INotifyPropertyChanged without AOP I think.
 public abstract class ConfigBase : INotifyPropertyChanged {
    protected Dictionary<string, object> BackStore = new Dictionary<string, object>();
@@ -97,10 +94,6 @@ class Resource {
    public static Config Config = new Config();
    public static string DebugResourceWorkingPath = Path.Combine(CurrentDirPath, "DebugResource");
    public static string ResourceWorkingPath = CurrentDirPath;
-   public static bool UseSkipPatch = Config.UseSkipPatch;
-   static Resource() {
-      Config.PropertyChanged += (s, e) => UseSkipPatch = (s as Config).UseSkipPatch;
-   }
    static Regex ignoredFiles = new Regex(
          @"^(:?(?:4\.xna)|(?:5\.xna)|(?:8\.xna)|(?:.*?\.dat))$", RegexOptions.Compiled);
    public static string MapResourcePath(string path) {
@@ -120,7 +113,7 @@ class Resource {
    public static string ResolveModPath(string fileName) {
       var modeFilePath = MapResourcePath(fileName);
       string newFileName;
-      if (UseSkipPatch) {
+      if (Config.UseSkipPatch) {
          newFileName = Path.Combine(DebugResourceWorkingPath, modeFilePath);
          if (File.Exists(newFileName)) {
             Console.WriteLine("Found debug mod: " + fileName);
@@ -139,12 +132,12 @@ class Resource {
       rs.AddRange(File.ReadAllLines(Path.Combine(CurrentDirPath, @"Content\Data\a0.txt")));
       return rs;
    }))();
-   static public HashSet<object> charTextures = new HashSet<object>();
-   static public dynamic font = null;
-   static public dynamic dfont = null;
-   static public dynamic scfont = null;
-   static public dynamic scdfont = null;
-   public static void SetSpriteFont(int key, object _font) {
+   static public IDictionary<XNATexture2D, SpriteFontX> charTextures = new Dictionary<XNATexture2D, SpriteFontX>();
+   static public SpriteFontX font = null;
+   static public SpriteFontX dfont = null;
+   static public SpriteFontX scfont = null;
+   static public SpriteFontX scdfont = null;
+   public static void SetSpriteFont(int key, SpriteFontX _font) {
       switch (key) {
          case 0: font = _font; break;
          case 1: dfont = _font; break;

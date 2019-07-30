@@ -1,18 +1,20 @@
 ﻿using ReflectionMagic;
+using RuntimePatcher;
 using System;
 using System.Collections.Generic;
-using static Fields;
+using THMHJ;
+using static Delegates;
+using static Methods;
 using static RuntimePatcher.Launcher;
 using static Types;
-using static Delegates;
-using System.Diagnostics;
 
 namespace DotnetPatching {
-   using PatchTuple = ValueTuple<Type, string, Type[], Type, string, Type[]>;
-   class Detours_1_04_sc {
-      public static List<PatchTuple> OnSetup() {
+   using static PatchInfo;
+   using PatchTuple = PatchInfo;
+   partial class Detours {
+      public static List<PatchTuple> OnSetup_1_04_sc() {
          return new List<PatchTuple>() {
-            (AchievementManagerT, "Initialize", null, typeof(Detours_1_04_sc), nameof(AchieveInitialize), null),
+            PM(AchiveManInitializeM, AchieveInitializeH),
          };
       }
       private static string[][] achivClassNames = new string[][] {
@@ -20,7 +22,7 @@ namespace DotnetPatching {
          new string[] { "见证银河的消失", "百发不中", "底力爆发", "恶魔的疯狂", "廿亿分突破", "无计可施", "毫发无伤", "绝好的时机", "轻飘飘", "条件反射", "不惧风雨", "风暴幸存者", "炸平幻想乡", "自信满满", "满载而归", "挑战符卡全收集", },
          new string[] { "可怕的毅力", "不屈不挠", "走投无路", "一个也不落", "擦弹有快感", "弹幕痴狂", "音乐就是生命", "铁杵磨成针", },
       };
-      public static void AchieveInitialize(object __instance) {
+      public static void AchieveInitialize(AchievementManager __instance) {
          dynamic _this = __instance.AsDynamic();
          _this.achivs = Array.CreateInstance(AchievementBaseT, 30);
          dynamic achivs = _this.achivs.RealObject;

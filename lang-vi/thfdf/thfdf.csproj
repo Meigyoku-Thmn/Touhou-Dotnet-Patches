@@ -30,6 +30,24 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <ItemGroup Condition="$(DefineConstants.Contains('_1_04_sc'))">
+    <Reference Include="Microsoft.Xna.Framework, Version=3.1.0.0" SpecificVersion="true" />
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=3.1.0.0" SpecificVersion="true" />
+    <Reference Include="SpriteFontX, Version=1.0.2.1" SpecificVersion="true">
+      <HintPath>C:\Users\MeigyokuThmn\Desktop\thmhj+1.04\SpriteFontX.dll</HintPath>
+    </Reference>
+    <Reference Include="THMHJ, Version=1.0.0.0" SpecificVersion="true">
+      <HintPath>C:\Users\MeigyokuThmn\Desktop\thmhj+1.04\THMHJ.exe</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="$(DefineConstants.Contains('_1_05_en'))">
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0" SpecificVersion="true" />
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0" SpecificVersion="true" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0" SpecificVersion="true" />
+    <Reference Include="THMHJ, Version=1.0.0.0" SpecificVersion="true">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\TouHou Makuka Sai ~ Fantastic Danmaku Festival\THMHJ.exe</HintPath>
+    </Reference>
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -55,6 +73,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="Precompiler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reentrants.cs" />
     <Compile Include="Resource.cs" />
     <Compile Include="Transpilers.1.04sc.cs" />
     <Compile Include="Transpilers.cs" />

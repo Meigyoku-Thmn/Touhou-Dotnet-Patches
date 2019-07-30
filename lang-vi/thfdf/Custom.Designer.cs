@@ -122,9 +122,9 @@
          this.chkAlterText.FlatStyle = System.Windows.Forms.FlatStyle.System;
          this.chkAlterText.Location = new System.Drawing.Point(15, 12);
          this.chkAlterText.Name = "chkAlterText";
-         this.chkAlterText.Size = new System.Drawing.Size(196, 24);
+         this.chkAlterText.Size = new System.Drawing.Size(186, 24);
          this.chkAlterText.TabIndex = 0;
-         this.chkAlterText.Text = "Thay đổi kiểu vẽ văn bản *";
+         this.chkAlterText.Text = "Thay đổi kiểu vẽ văn bản";
          this.chkAlterText.UseVisualStyleBackColor = true;
          // 
          // chkTachieOnTop
@@ -166,9 +166,9 @@
          this.chkUseBorder.FlatStyle = System.Windows.Forms.FlatStyle.System;
          this.chkUseBorder.Location = new System.Drawing.Point(15, 24);
          this.chkUseBorder.Name = "chkUseBorder";
-         this.chkUseBorder.Size = new System.Drawing.Size(304, 24);
+         this.chkUseBorder.Size = new System.Drawing.Size(314, 24);
          this.chkUseBorder.TabIndex = 0;
-         this.chkUseBorder.Text = "Dùng viền đen thay vì bóng đổ cho văn bản";
+         this.chkUseBorder.Text = "Dùng viền đen thay vì bóng đổ cho văn bản *";
          this.chkUseBorder.UseVisualStyleBackColor = true;
          // 
          // chkCustomFont

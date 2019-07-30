@@ -18,11 +18,11 @@
         "Enabled": true
       },
       "ProtagonistLineColor": {
-        "Color": "100, 177, 255",
+        "Color": "111, 255, 111",
         "Enabled": true
       },
       "AntagonistLineColor": {
-        "Color": "255, 0, 128",
+        "Color": "255, 111, 111",
         "Enabled": true
       },
       "Enabled": true
