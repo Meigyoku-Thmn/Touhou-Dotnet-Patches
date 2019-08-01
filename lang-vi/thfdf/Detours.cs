@@ -50,58 +50,12 @@ namespace DotnetPatching {
             // collect character textures
             PM(SPXnewTexM, newTexH, newTexR),
          }.Concat(!(Resource.Config.AlterTextCfg.Enabled && Resource.Config.AlterTextCfg.UseBlackBorder) ? new PatchTuple[0] : new PatchTuple[] {
-            // stroke border for text, instead of drop shadow
-            PM(SBDraw2M, SBDraw2H, SBDraw2R),
          })
 #if _1_04_sc
          .Concat(OnSetup_1_04_sc())
          .ToList()
 #endif
          ;
-      }
-      static float borderSize = 1.5f;
-      static float shiftX = -1;
-      static float shiftY = -1;
-      static public bool TestColor(XnaColor input, XnaColor solid) {
-         return input.R == solid.R && input.G == solid.G && input.B == solid.B;
-      }
-      public static void SBDraw2(SpriteBatch __instance, Texture2D texture, Vector2 position, XnaRectangle? sourceRectangle, XnaColor color, float rotation, Vector2 origin, Vector2 scale, SpriteEffects effects, float layerDepth) {
-         Action<Vector2, XnaColor> reentrant = (newPos, newColor) => {
-            _SBDraw2(__instance, texture, newPos, sourceRectangle, newColor, rotation, origin, scale, effects, layerDepth);
-         };
-         SpriteFontX font;
-         if (!charTextures.TryGetValue(texture, out font)) {
-            reentrant(position, color); return;
-         }
-         var config = Resource.Config;
-         var alterTextCfg = config.AlterTextCfg;
-         var alterFontCfg = alterTextCfg.AlterFontCfg;
-         var protagonistLineColor = alterFontCfg.ProtagonistLineColor;
-         var antagonistLineColor = alterFontCfg.AntagonistLineColor;
-         if (TestColor(color, XnaColor.Black)) {
-            if (alterTextCfg.Enabled && alterTextCfg.UseBlackBorder) {
-               position.X--; position.Y--;
-               float X = position.X, Y = position.Y;
-               position = new Vector2(X - borderSize, Y - borderSize);
-               reentrant(position, color);
-               position = new Vector2(X + borderSize, Y - borderSize);
-               reentrant(position, color);
-               position = new Vector2(X + borderSize, Y + borderSize);
-               reentrant(position, color);
-               position = new Vector2(X - borderSize, Y + borderSize);
-               reentrant(position, color);
-               position = new Vector2(X, Y + borderSize);
-               reentrant(position, color);
-               position = new Vector2(X, Y - borderSize);
-               reentrant(position, color);
-               position = new Vector2(X - borderSize, Y);
-               reentrant(position, color);
-               position = new Vector2(X + borderSize, Y);
-               reentrant(position, color);
-               return;
-            }
-         }
-         reentrant(position, color);
       }
       public static void newTex(SpriteFontX __instance, ref Texture2D ___CurrentTex2d) {
          _newTex(__instance);

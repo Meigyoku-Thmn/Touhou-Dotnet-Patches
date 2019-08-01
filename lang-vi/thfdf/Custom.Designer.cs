@@ -30,7 +30,6 @@
          this.cmdAbout = new System.Windows.Forms.Button();
          this.chkAlterText = new System.Windows.Forms.CheckBox();
          this.chkTachieOnTop = new System.Windows.Forms.CheckBox();
-         this.label1 = new System.Windows.Forms.Label();
          this.chkUseSkip = new System.Windows.Forms.CheckBox();
          this.chkUseBorder = new System.Windows.Forms.CheckBox();
          this.chkCustomFont = new System.Windows.Forms.CheckBox();
@@ -138,17 +137,6 @@
          this.chkTachieOnTop.Text = "Đưa tachie nhân vật đè lên trên khung giao diện game";
          this.chkTachieOnTop.UseVisualStyleBackColor = true;
          // 
-         // label1
-         // 
-         this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-         this.label1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.label1.Location = new System.Drawing.Point(8, 395);
-         this.label1.Name = "label1";
-         this.label1.Size = new System.Drawing.Size(447, 23);
-         this.label1.TabIndex = 7;
-         this.label1.Text = "* Tính năng còn đang thử nghiệm, có thể có lỗi phát sinh";
-         this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-         // 
          // chkUseSkip
          // 
          this.chkUseSkip.AutoSize = true;
@@ -166,9 +154,9 @@
          this.chkUseBorder.FlatStyle = System.Windows.Forms.FlatStyle.System;
          this.chkUseBorder.Location = new System.Drawing.Point(15, 24);
          this.chkUseBorder.Name = "chkUseBorder";
-         this.chkUseBorder.Size = new System.Drawing.Size(314, 24);
+         this.chkUseBorder.Size = new System.Drawing.Size(304, 24);
          this.chkUseBorder.TabIndex = 0;
-         this.chkUseBorder.Text = "Dùng viền đen thay vì bóng đổ cho văn bản *";
+         this.chkUseBorder.Text = "Dùng viền đen thay vì bóng đổ cho văn bản";
          this.chkUseBorder.UseVisualStyleBackColor = true;
          // 
          // chkCustomFont
@@ -411,7 +399,6 @@
          this.Controls.Add(this.chkAlterText);
          this.Controls.Add(this.grpAlterText);
          this.Controls.Add(this.chkUseSkip);
-         this.Controls.Add(this.label1);
          this.Controls.Add(this.chkTachieOnTop);
          this.Controls.Add(this.cmdAbout);
          this.Controls.Add(this.cmdOpenOmake);
@@ -441,7 +428,6 @@
       private System.Windows.Forms.Button cmdAbout;
       private System.Windows.Forms.CheckBox chkAlterText;
       private System.Windows.Forms.CheckBox chkTachieOnTop;
-      private System.Windows.Forms.Label label1;
       private System.Windows.Forms.CheckBox chkUseSkip;
       private System.Windows.Forms.CheckBox chkUseBorder;
       private System.Windows.Forms.CheckBox chkCustomFont;

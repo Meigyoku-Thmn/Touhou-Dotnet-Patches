@@ -7,6 +7,8 @@ using Microsoft.Xna.Framework.Storage;
 #endif
 using System;
 using System.Collections;
+using System.Linq;
+using System.Collections.Generic;
 using System.Drawing.Text;
 using System.Reflection;
 using THMHJ;
@@ -59,7 +61,9 @@ class Types {
    public static Type          GameT = typeof(THMHJ.Game);
    public static Type          MainT = typeof(THMHJ.Main);
    public static Type      PLAYDATAT = TargetAssembly.GetType("THMHJ.PLAYDATA");
+   public static Type        REPLAYT = TargetAssembly.GetType("THMHJ.REPLAY");
    public static Type      PlayDataT = typeof(PlayData);
+   public static Type      PRACTICET = TargetAssembly.GetType("THMHJ.PRACTICE");
    public static Type RecordManagerT = typeof(RecordManager);
    public static Type    RecordSaveT = typeof(RecordSave);
    public static Type    ReplaySaveT = typeof(ReplaySave);
@@ -106,6 +110,10 @@ class Methods {
    public static MethodInfo GetDefaultIconM      = AccessTools.Method(WindowsGameWindowT, "GetDefaultIcon");
    public static MethodInfo SPXInitializeM       = AccessTools.Method(SpriteFontXT, "Initialize");
    public static MethodInfo SPXnewTexM           = AccessTools.Method(SpriteFontXT, "newTex");
+   public static MethodInfo SPXDraw1             = AccessTools.Method(SpriteFontXT, "Draw", TypeL(SpriteBatchT, StringT, Vector2T, ColorT));
+   public static MethodInfo SPXDraw2             = AccessTools.Method(SpriteFontXT, "Draw", TypeL(SpriteBatchT, CharArrT, Vector2T, ColorT));
+   public static MethodInfo SPXDraw3             = AccessTools.Method(SpriteFontXT, "Draw", TypeL(SpriteBatchT, StringT, Vector2T, Vector2T, Vector2T, ColorT));
+   public static MethodInfo SPXDraw4             = AccessTools.Method(SpriteFontXT, "Draw", TypeL(SpriteBatchT, CharArrT, Vector2T, Vector2T, Vector2T, ColorT));
    public static MethodInfo AchiveManInitializeM = AccessTools.Method(AchievementManagerT, "Initialize");
    public static MethodInfo BlackHoleAchiveCheckM = AccessTools.Method(BlackHoleAchiveT, "Check");
    public static MethodInfo MissAtAllAchiveM      = AccessTools.Method(MissAtAllAchiveT, "Check");
@@ -137,7 +145,6 @@ class Methods {
    public static MethodInfo SpriteFontXInitializeH = AccessTools.Method(DetoursT, nameof(Detours.SpriteFontXInitialize));
    public static MethodInfo newTexH                = AccessTools.Method(DetoursT, nameof(Detours.newTex));
    public static MethodInfo AchieveInitializeH     = AccessTools.Method(DetoursT, nameof(Detours.AchieveInitialize));
-   public static MethodInfo SBDraw2H               = AccessTools.Method(DetoursT, nameof(Detours.SBDraw2));
 
    public static MethodInfo BoardConstructorH        = AccessTools.Method(TranspilersT, nameof(DotnetPatching.Transpilers.BoardConstructor));
    public static MethodInfo BlackHoleAchiveCheckH    = AccessTools.Method(TranspilersT, nameof(DotnetPatching.Transpilers.BlackHoleAchiveCheck));
@@ -165,6 +172,15 @@ class Methods {
    public static MethodInfo DrawMethodOfTitleH   = AccessTools.Method(TranspilersT, nameof(DotnetPatching.Transpilers.DrawMethodOfTitle));
    public static MethodInfo DrawMethodOfEDH   = AccessTools.Method(TranspilersT, nameof(DotnetPatching.Transpilers.DrawMethodOfED));
    public static MethodInfo CardDisplayConstructorH   = AccessTools.Method(TranspilersT, nameof(DotnetPatching.Transpilers.CardDisplayConstructor));
+
+   public static MethodInfo[] DrawFuncs = new Type[] {
+      MainT, BoardT, DialogT, EntranceT, PLAYDATAT, PRACTICET, REPLAYT, SPECIALT, CardDisplayT }
+      .Select(type => AccessTools.Method(type, "Draw")).ToArray();
+   public static MethodInfo DrawMethodsH = AccessTools.Method(TranspilersT, nameof(DotnetPatching.Transpilers.DrawMethods));
+   public static MethodInfo Draw1H = AccessTools.Method(TranspilersT, nameof(DotnetPatching.Transpilers.Draw1));
+   public static MethodInfo Draw2H = AccessTools.Method(TranspilersT, nameof(DotnetPatching.Transpilers.Draw2));
+   public static MethodInfo Draw3H = AccessTools.Method(TranspilersT, nameof(DotnetPatching.Transpilers.Draw3));
+   public static MethodInfo Draw4H = AccessTools.Method(TranspilersT, nameof(DotnetPatching.Transpilers.Draw4));
 }
 class Fields {
    public static FieldInfo fontF       = AccessTools.Field(MainT, "font");

@@ -17,6 +17,7 @@ using static Types;
 
 //css_import Transpilers.1.04sc.cs
 namespace DotnetPatching {
+   using System;
    using System.Diagnostics;
    using static RuntimePatcher.PatchInfo;
    using CodeInstructionMap = IDictionary<int, CodeInstructionWrapper>;
@@ -69,9 +70,77 @@ namespace DotnetPatching {
 #if _1_04_sc
          .Concat(OnSetup_1_04_sc())
 #endif
+         // stroke border for text, instead of drop shadow
+         .Concat(DrawFuncs.Select(func => PM(func, DrawMethodsH)))
          .ToList()
          ;
       }
+      public static CodeInstructions DrawMethods(CodeInstructions instructions) {
+         foreach (var instr in instructions) {
+            if (!(instr.opcode == OpCodes.Call || instr.opcode == OpCodes.Callvirt)) continue;
+            if (ReferenceEquals(instr.operand, SPXDraw1)) {
+               instr.operand = Draw1H; instr.opcode = OpCodes.Call;
+            }
+            else if (ReferenceEquals(instr.operand, SPXDraw2)) {
+               instr.operand = Draw2H; instr.opcode = OpCodes.Call;
+            }
+            else if (ReferenceEquals(instr.operand, SPXDraw3)) {
+               instr.operand = Draw3H; instr.opcode = OpCodes.Call;
+            }
+            else if (ReferenceEquals(instr.operand, SPXDraw4)) {
+               instr.operand = Draw4H; instr.opcode = OpCodes.Call;
+            }
+         }
+         return instructions;
+      }
+
+      public static Vector2 Draw1(SpriteFontX __inst, SpriteBatch sb, string str, Vector2 position, XnaColor color) {
+         return Draw4(__inst, sb, str.ToCharArray(), position, new Vector2(float.MaxValue, float.MaxValue), Vector2.One, color);
+      }
+      public static Vector2 Draw2(SpriteFontX __inst, SpriteBatch sb, char[] str, Vector2 position, XnaColor color) {
+         return Draw4(__inst, sb, str, position, new Vector2(float.MaxValue, float.MaxValue), Vector2.One, color);
+      }
+      public static Vector2 Draw3(SpriteFontX __inst, SpriteBatch sb, string str, Vector2 position, Vector2 maxBound, Vector2 scale, XnaColor color) {
+         return Draw4(__inst, sb, str.ToCharArray(), position, maxBound, scale, color);
+      }
+      static float borderSize = 1.5f;
+      static float shiftX = -1;
+      static float shiftY = -1;
+      static public bool TestColor(XnaColor input, XnaColor solid) {
+         return input.R == solid.R && input.G == solid.G && input.B == solid.B;
+      }
+      public static Vector2 Draw4(SpriteFontX __inst, SpriteBatch sb, char[] str, Vector2 position, Vector2 maxBound, Vector2 scale, XnaColor color) {
+         Func<Vector2, Vector2> DrawSp = (newPos) => __inst.Draw(sb, str, newPos, maxBound, scale, color);
+         var config = Resource.Config;
+         var alterTextCfg = config.AlterTextCfg;
+         var alterFontCfg = alterTextCfg.AlterFontCfg;
+         var protagonistLineColor = alterFontCfg.ProtagonistLineColor;
+         var antagonistLineColor = alterFontCfg.AntagonistLineColor;
+         if (TestColor(color, XnaColor.Black)) {
+            if (alterTextCfg.Enabled && alterTextCfg.UseBlackBorder) {
+               position.X--; position.Y--;
+               float X = position.X, Y = position.Y;
+               position = new Vector2(X - borderSize, Y - borderSize);
+               DrawSp(position);
+               position = new Vector2(X + borderSize, Y - borderSize);
+               DrawSp(position);
+               position = new Vector2(X + borderSize, Y + borderSize);
+               DrawSp(position);
+               position = new Vector2(X - borderSize, Y + borderSize);
+               DrawSp(position);
+               position = new Vector2(X, Y + borderSize);
+               DrawSp(position);
+               position = new Vector2(X, Y - borderSize);
+               DrawSp(position);
+               position = new Vector2(X - borderSize, Y);
+               DrawSp(position);
+               position = new Vector2(X + borderSize, Y);
+               return DrawSp(position);
+            }
+         }
+         return DrawSp(position);
+      }
+
       public static CodeInstructions DrawMethodOfDialog(CodeInstructions instructions, CodeInstructionMap instrByOffsets) {
          var instrs = instructions as List<CodeInstruction>;
          // RGB

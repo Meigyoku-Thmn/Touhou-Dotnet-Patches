@@ -71,7 +71,7 @@ namespace DotnetPatching {
          var text = ((string)(_this.n)).Split(']')[1];
          InsertLineBreak(ref text, 340f);
          Color shadowColor = new Color(0f, 0f, 0f, _this.dalpha);
-         dfont.Draw(spriteBatch, text, shadowPosition, shadowColor);
+         Draw1(dfont, spriteBatch, text, shadowPosition, shadowColor);
          var alterTextCfg = Resource.Config.AlterTextCfg;
          var alterFontCfg = alterTextCfg.AlterFontCfg;
          var protagonistLineColor = alterFontCfg.ProtagonistLineColor;
@@ -83,14 +83,14 @@ namespace DotnetPatching {
             if (alterTextCfg.Enabled && alterFontCfg.Enabled && protagonistLineColor.Enabled)
                color = new Color(proColor.R, proColor.G, proColor.B, (byte)(_this.dalpha * 255));
             else color = new Color(0f, 1f, 0f, _this.dalpha);
-            dfont.Draw(spriteBatch, text, position, color);
+            Draw1(dfont, spriteBatch, text, position, color);
          }
          else {
             Color color;
             if (alterTextCfg.Enabled && alterFontCfg.Enabled && antagonistLineColor.Enabled)
                color = new Color(antColor.R, antColor.G, antColor.B, (byte)(_this.dalpha * 255));
             else color = new Color(1f, 0f, 0f, _this.dalpha);
-            dfont.Draw(spriteBatch, text, position, color);
+            Draw1(dfont, spriteBatch, text, position, color);
          }
       }
    }
