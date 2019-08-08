@@ -1,0 +1,151 @@
+﻿Group,SC,JP,EN,VN
+Normal,"感谢支持
+进入游戏","応援してくれてありがとうございます
+ゲームに入る","Thanks for your support
+Enter the game","Cảm tạ Giúp đỡ
+Vào game."
+Normal,"初次见面
+进行过一次关卡游戏","初めまして
+ステージを一つクリア","Nice to meet you
+Start the game in single mode","Gặp mặt Lần đầu
+Bắt đầu phần chơi một lần."
+Normal,"一周目
+不续关通关一次","一周目
+一度ノーコンティニューでゲームクリア","First round
+All cleared without continuing","Vòng thứ nhất
+Phá ván một lần mà không dùng continue."
+Normal,"全机体通关
+要求所有机体不续关通关一次","全自機クリア
+すべての自機でノーコンゲームクリア","All characters cleared
+All characters all cleared without continuing","Toàn nhân vật Phá đảo
+Yêu cầu tất cả nhân vật phá ván một lần không dùng continue."
+Normal,"全难度通关
+要求任意一机体在所有难度下不续关通关一次","全難易度クリア
+一人の自機で、全難易度ノーコンクリア","All difficult level cleared
+Use any of the characters to all clear without continuing","Phá đảo Toàn độ khó
+Yêu cầu phá ván một lần không dùng continue tất cả độ khó bằng nhân vật bất kì."
+Normal,"幻想乡制霸
+要求所有机体在所有难度下不续关通关一次","幻想郷制覇
+すべての自機で、全難易度ノーコンクリア","Conquer the Gensokyo
+Require all characters all cleared in all difficult level","Làm bá Ảo Tưởng Hương
+Yêu cầu bằng tất cả nhân vật phá ván tất cả độ khó một lần không dùng continue."
+Challenge,"见证银河的消失
+坚持到黑洞「银河之心」的最后10秒，或坚持到黑洞「银河灾变」的最后10秒","銀河の消失を見届く
+ブラックホール「ギャラクシー·ハート」/「ギャラクシー·カタストロフ」の最後の10秒まで凌ぐ","Witness the dying of the galaxy
+Hold on until last 10 seconds of Black hole ""Heart of Galaxy"" or ""Galaxy Cataclysm""","Chứng kiến Sự biến mất của Ngân hà
+Kiên trì đến 9 giây cuối cùng của Lỗ đen ""Trái tim Ngân hà"" hoặc ""Ngân Hà Tai Biến""."
+Challenge,"百发不中
+全避冰符「百发百中速冻光弹」","百発零中
+氷符「百発百中アイシクル·ホーミングミサイル」を避け切る","Missed All
+Dodge the bullets of the spell card ""No miss! Iciclehoming missile"" completely","Trăm Phát Không Trúng
+Chỉ né trong spellcard ""Băng Phù Tốc Đống Quang Đạn Trăm Phát Trăm Trúng"" mà không bị hoặc làm gì khác."
+Challenge,"底力爆发
+无MISS无BOMB的情况下收取终焉「恶魔祭典」","底力爆発
+ミスなし、且つボムを使わないまま終焉「デビルフェス」を取得する","Potential outbreak
+Capture Amergaddon ""Devil Fiesta"" no Miss no BOMB","Tiềm Lực Bộc Phát
+Bắt được spell Cái kết ""Lễ hội Ác ma"" dưới điều kiện không MISS không BOMB."
+Challenge,"恶魔的疯狂
+坚持到芙兰朵露斯卡雷特最后一张非符的最后5秒","悪魔の狂気
+フランドール·スカーレットの最後の通常弾幕の最後の5秒まで凌ぐ","Devil's craziness
+Hold on until the last 5 seconds of Flandre Scarlet'slast non-spell","Sự điên rồ của Ác ma
+Kiên trì đến 5 giây cuối cùng của non-spell cuối cùng của Flandre Scarlet."
+Challenge,"廿亿分突破
+在H难度及以上打出2000000000分数以上","廿億スコア突破
+Hard以上の難易度で2000000000以上のスコアを達成する","Breakthrough 200 million scores
+Hit over 200 million scores in difficult level Hard orhigher","Đột phá 200 triệu điểm số
+Cán mốc 200 triệu điểm số ở độ khó Hard trở lên."
+Challenge,"无计可施
+全避「藏于牌中的杀意」","成す術なし
+「マーダーインテント·イン·カード」を避け切る","Nothing left to do
+Dodge the bullets of ""Murder intention in cards"" completely","Vô Kế Khả Thi
+Chỉ né trong spell ""Sát ý Giấu trong Bài"" mà không bị hoặc làm gì khác."
+Challenge,"毫发无伤
+任意难度无MISS通关","かすり傷一つなく
+任意の難易度で、ミスなしのままゲームクリア","Totally Unharmed
+All clear in any difficult level no Miss","Chẳng mảy Tổn thương
+Phá ván không MISS với độ khó bất kì."
+Challenge,"绝好的时机
+N难度及以上在任意一张符卡计时即将结束的时候击破并取得符卡","絶好のタイミング
+難易度N以上、任意のスペルカードを時間が尽きる寸前で取得","The best chance
+Defeat any spell card and capture it right befor the time ends in at least difficult level Normal","Thời cơ Tuyệt hảo
+Công phá và bắt được spellcard bất kì ngay trước khi bộ đếm giờ kết thúc (1 giây) ở độ khó Normal trở lên."
+Challenge,"轻飘飘
+N难度及以上不使用低速收取任意三张符卡","ふわふわ
+難易度N以上、低速モードを使わずに任意の三つのスペルカードを取得","Fluttering
+Capture 3 spell cards in at least difficult level Normal without using low speed","Bồng bềnh
+Bắt được 3 spellcard bất kì từ độ khó Normal trở lên mà không dùng tốc độ chậm (focusing)."
+Challenge,"条件反射
+任意难度开始游戏后每一次MISS都是决死并直至通关","条件反射
+任意の難易度でゲームスタート後、すべてのミスに決死ボムを、そしてゲームクリア","Conditioned reflex
+Start the game in any difficult level, then take death-bomb every miss until you pass all stages","Phản xạ Có điều kiện
+Bắt đầu phần chơi ở độ khó bất kì, rồi dùng DEATH-BOMB cho mỗi lần MISS cho đến khi phá ván."
+Challenge,"不惧风雨
+在同屏弹幕超过500发的情况下保持不动超过5秒","雨にも負けず
+画面上の弾幕の数が500を超えた場合、五秒間動かないままでいる","No fear for the storm
+Hold still for at least 5 seconds when there're over 500 bullets","Không sợ Mưa gió
+Giữ bất động trong ít nhất 5 giây dưới tình huống số đạn đạt ít nhất 500 viên trên cùng màn hình."
+Challenge,"风暴幸存者
+全避红夜「杀人漩涡」","ストームサバイバー
+紅夜「キリングボルテックス」を避け切る","Storm survivor
+Dodge the bullets of Scarlet Night ""Killing Vortex"" completely","Người sống sót sau Bão táp
+Chỉ né trong spell Hồng Dạ ""Xoáy nước Sát nhân"" mà không bị hoặc làm gì khác."
+Challenge,"炸平幻想乡
+任意难度只使用BOMB干掉任意关底BOSS","幻想郷爆撃処分
+任意の難易度で、ボムだけで任意のステージボスを仕留める","Razed Gensokyo to the ground
+Defeat any boss use only BOMB","Nổ san bằng Ảo Tưởng Hương
+Hạ gục BOSS bất kì mà chỉ sử dụng BOMB ở độ khó bất kì."
+Challenge,"自信满满
+最高难度不使用BOMB干掉任意Stage 1以上的关底BOSS","自信満々
+最高の難易度で、ボムを使わずにステージ1以外の任意のステージボスを仕留める","Full of confidence
+Defeat any boss after the first stage in highest difficult level without using BOMB","Tràn đầy Tự tin
+Hạ gục BOSS bất kì cuối màn từ sau Stage 1 trở đi ở độ khó cao nhất mà không sử dụng BOMB."
+Challenge,"满载而归
+用任意人物取得N难度及以上任意难度的所有符卡","大漁帰り
+任意の自機で、Normal以上の難易度ですべてのスペルカードを取得する","Fully loaded
+Capture all the spell cards in any difficult level thathigher than Normal using any of the character","Chất đầy mà Về
+Bắt được tất cả spellcard ở độ khó bất kì từ Normal trở lên bằng nhân vật bất kì."
+Challenge,"挑战符卡全收集
+用任意人物取得所有Spellcard Challenges中的符卡","目指せ！スペルカードマスター
+任意の自機で、スペルカードチャレンジのすべてのスペルカードを取得する","Challenge spell cards fully captured
+Capture all the spell cards in Spellcard Challenges","Bắt hết Spellcard Khiêu chiến
+Bắt được tất cả spellcard trong Spellcard Challenge bằng nhân vật bất kì."
+Hidden,"可怕的毅力
+任意人物游戏次数超过一百次","恐るべき根性
+任意の自機のゲーム回数が１００を超える","Admirable perseverance
+Play any of the characters more than 100 times","Nghị lực Đáng sợ
+Số lần chơi nhân vật bất kì ít nhất 100 lần."
+Hidden,"不屈不挠
+在任意难度下直到不能再续关的情况下通关","不撓不屈
+任意の難易度で、これ以上コンティニューできない状態でゲームクリア","Never give up
+All clear when can't continue the game any more inany difficult level","Bất chùn Bất khuất
+Phá ván game dưới tình huống không thể continue nữa ở độ khó bất kì."
+Hidden,"走投无路
+在任意符卡下上避超过10秒","八方塞がり
+任意のスペルカードでに、１０秒間以上に上避けする","Nowhere else to go
+Try to avoid the danmaku for at least 10 seconds above the enemy","Cùng đường Bí lối
+Cố tránh đạn trong ít nhất 10 giây ở phần trên màn hình ở spellcard bất kì."
+Hidden,"一个也不落
+游戏中在道具线上收点超过50次","しらみつぶし
+アイテム回収ラインの上に５０回以上スコアを回収する","Nothing left
+Scored over 50 times at the point of collection","Một cái cũng Không để rơi
+Hút điểm ít nhất 50 lần trong vùng thu thập item trong một phần chơi."
+Hidden,"擦弹有快感
+游戏中擦弹数超过20000","グレイズの快感
+２００００回以上グレイズをする","Feel so good to graze
+Graze over 20 thousand","Sượt đạn Thấy Khoái cảm
+Số đạn sượt ít nhất 20000 trong một phần chơi."
+Hidden,"弹幕痴狂
+总游戏时间超过30个小时","弾幕マニア
+合計ゲーム時間３０時間になる","Crazy in danmaku
+Over 30 hours playing","Si cuồng Đạn mạc
+Tổng thời gian các phần chơi ít nhất 30 giờ."
+Hidden,"音乐就是生命
+在Music Room中逗留超过30分钟","ノーミュージック、ノーライフ
+３０分以上Music Roomに","Music is life
+Stay in the music room for over 30 minutes","Âm nhạc Chính là Cuộc sống
+Lưu lại trong Music Room ít nhất 30 phút."
+Hidden,"铁杵磨成针
+任意挑战符卡收率在0/100及以上的情况下取得","鉄の棒が研磨されて針になる
+任意のスペルカードの挑戦記録が0／100以上になった状況に、それを取得する","Keep trying and you'll get there
+Challenged over 100 times and still haven't capture any spell card","Mài sắt Nên kim
+Bắt được spellcard khiêu chiến bất kì ít nhất một lần khi đã khiêu chiến spellcard đó ít nhất 100 lần."

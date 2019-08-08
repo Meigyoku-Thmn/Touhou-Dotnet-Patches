@@ -12,6 +12,6 @@
 敌34]Hơn nữa… Ta là ác ma đặc biệt, kẻ được chủ nhân chọn lựa để bảo vệ nơi này sau khi ngài rời đi…
 MUSIC
 敌34]Tóm lại…
-敌33]Ngươi tự tiện xông vào đại thư viện, ta tuyệt đối không thể buông tha!
+敌33]Ai mà tự tiện xông vào đại thư viện, thì ta tuyệt đối không thể buông tha!
 自0]Vậy thì thử coi ngươi có thể ngăn cản ta hay không đi.
 PAUSE

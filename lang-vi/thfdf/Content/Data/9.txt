@@ -7,7 +7,7 @@ Phá đảo Toàn độ khó：Yêu cầu phá ván một lần không dùng con
 Làm bá Ảo Tưởng Hương：Yêu cầu bằng tất cả nhân vật phá ván tất cả độ khó một lần không dùng continue.
 16
 Chứng kiến Sự biến mất của Ngân hà：Kiên trì đến 9 giây cuối cùng của Lỗ đen "Trái tim Ngân hà" hoặc "Ngân Hà Tai Biến".
-Trăm Phát Không Trúng：Chỉ né trong spellcard Băng Phù "Tốc Đống Quang Đạn Trăm Phát Trăm Trúng" mà không bị hoặc làm gì khác.
+Trăm Phát Không Trúng：Chỉ né trong spellcard "Băng Phù Tốc Đống Quang Đạn Trăm Phát Trăm Trúng" mà không bị hoặc làm gì khác.
 Tiềm Lực Bộc Phát：Bắt được spell Cái kết "Lễ hội Ác ma" dưới điều kiện không MISS không BOMB.
 Sự điên rồ của Ác ma：Kiên trì đến 5 giây cuối cùng của non-spell cuối cùng của Flandre Scarlet.
 Đột phá 200 triệu điểm số：Cán mốc 200 triệu điểm số ở độ khó Hard trở lên.

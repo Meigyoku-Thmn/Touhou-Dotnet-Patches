@@ -104,8 +104,6 @@ namespace DotnetPatching {
          return Draw4(__inst, sb, str.ToCharArray(), position, maxBound, scale, color);
       }
       static float borderSize = 1.5f;
-      static float shiftX = -1;
-      static float shiftY = -1;
       static public bool TestColor(XnaColor input, XnaColor solid) {
          return input.R == solid.R && input.G == solid.G && input.B == solid.B;
       }

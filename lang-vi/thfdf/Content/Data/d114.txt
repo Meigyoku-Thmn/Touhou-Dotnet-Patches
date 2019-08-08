@@ -4,7 +4,7 @@
 敌00]Bởi vì có một cái gì đó đang có hấp dẫn ta đến nơi này đó.
 自0]Nhưng mà trên người ngươi hình như đang có tỏa ra hơi khí kỳ lạ…
 MUSIC
-自0]Xem ra là cần phải giúp ngươi thanh trừ một lát vậy.
+自0]Xem ra cần phải giúp ngươi thanh trừ một lát vậy.
 敌00]Muốn động thủ sao? Vừa đẹp, cho ta lĩnh giáo ma pháp của ngươi đi!
 PAUSE
 敌01]Quả nhiên rất lợi hại đấy.

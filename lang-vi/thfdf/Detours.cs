@@ -53,8 +53,8 @@ namespace DotnetPatching {
          })
 #if _1_04_sc
          .Concat(OnSetup_1_04_sc())
-         .ToList()
 #endif
+         .ToList()
          ;
       }
       public static void newTex(SpriteFontX __instance, ref Texture2D ___CurrentTex2d) {

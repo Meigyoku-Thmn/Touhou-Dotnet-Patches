@@ -10,7 +10,7 @@ MUSIC
 自0]Chỉ cần chiến đấu với ta là được thôi.
 敌30]Chiến đấu?
 自0]Ta có thể thanh trừ hết hơi khí trên người ngươi.
-自0]Bởi vì nếu mà để nó ứ đọng quá nhiều, nói không chừng thì ngươi sẽ cuồng loạn.
+自0]Bởi vì nếu mà để nó ứ đọng quá nhiều, nói không chừng thì ngươi sẽ bị cuồng loạn.
 敌30]Hể?! Vậy tôi phải chiến đấu như thế nào chứ?
 自0]Hãy cố gắng sử dụng ma pháp mà ta dạy ngươi đi.
 敌32]Như vậy có thực là ổn không đây…

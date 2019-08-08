@@ -8,5 +8,5 @@ MUSIC
 PAUSE
 敌01]Không ngờ rằng lợi hại như vậy.
 自3]Thứ lỗi, nhưng ta nắm giữ sức mạnh của thần cơ.
-敌00]Ta không muốn dây dưa quá nhiều với ngươi, xin phép đi trước.
+敌00]Ta không muốn dây dưa quá nhiều với ngươi, xin phép đi trước vậy.
 自1]Định chạy trốn sao?

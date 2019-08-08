@@ -11,6 +11,7 @@ using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
 
 using XNATexture2D = Microsoft.Xna.Framework.Graphics.Texture2D;
+using GDIColor = System.Drawing.Color;
 // this is the best way to implement INotifyPropertyChanged without AOP I think.
 public abstract class ConfigBase : INotifyPropertyChanged {
    protected Dictionary<string, object> BackStore = new Dictionary<string, object>();
@@ -57,16 +58,16 @@ public class Config : ConfigBase {
          public class ColorDetail : ConfigBase {
             [JsonProperty] private string Color;
             public bool Enabled { get => GetValue(); set => SetValue(value); }
-            [JsonIgnore] public Color ColorI { get => GetValue(); set => SetValue(value); }
+            [JsonIgnore] public GDIColor ColorI { get => GetValue(); set => SetValue(value); }
             [OnSerializing]
             internal void OnSerializingMethod(StreamingContext context)
                => Color = new ColorConverter().ConvertToInvariantString(ColorI);
             [OnDeserialized]
             internal void OnDeserializedMethod(StreamingContext context)
-               => ColorI = Color != null ? (Color)new ColorConverter().ConvertFromInvariantString(Color) : ColorI;
+               => ColorI = Color != null ? (GDIColor)new ColorConverter().ConvertFromInvariantString(Color) : ColorI;
          }
-         public ColorDetail ProtagonistLineColor = new ColorDetail() { ColorI = Color.Green };
-         public ColorDetail AntagonistLineColor = new ColorDetail() { ColorI = Color.Red };
+         public ColorDetail ProtagonistLineColor = new ColorDetail() { ColorI = GDIColor.Green };
+         public ColorDetail AntagonistLineColor = new ColorDetail() { ColorI = GDIColor.Red };
       }
       public AlterFontConfig AlterFontCfg = new AlterFontConfig();
    }
