@@ -6,8 +6,8 @@ Quang Phù "Quang Mạch – Tinh Tán" 12 3
 "Bụi sao Vụn vỡ" 12 4
 3
 "Suối Băng Long lánh Tuôn trào Dữ dội" 22 5
-"Dấu chân Đóng băng" 22 6
-"Xoay tròn đi! Hỡi vầng băng!" 22 7
+Băng Phù "Dấu chân Đóng băng" 22 6
+Băng Phù "Xoay tròn đi! Hỡi vầng băng!" 22 7
 4
 Liên Phù "Địa Dũng Kim Liên" 32 8
 Thái Phù "Lưu Quang – Dật Thái" 32 9
@@ -23,7 +23,7 @@ Ma Pháp "Nguồn Địa nhiệt Jack Đèn lồng" 43 14
 "Sát ý Đậy dưới Bài" 52 17
 Thời Phù "Thời Đoạn Tiêu Thất" 52 18
 Kỳ Thuật "Không Gian Biến Hoán Thuật" 52 19
-"Sự sợ hãi trong Khe hở Thời gian" 52 20
+"Nỗi sợ hãi trong Khe hở Thời gian" 52 20
 Kỳ Thuật "Ma thuật Mũi dao" 52 21
 5
 Vận Mệnh "Giao quấn – Nghịch phản chi Mệnh" 63 22

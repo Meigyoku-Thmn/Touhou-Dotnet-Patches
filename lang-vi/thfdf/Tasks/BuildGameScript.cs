@@ -19,10 +19,11 @@ public class GameScriptBuilder
 {
    static void Main(string[] args)
    {
+      var a = (9, 2);
       Console.OutputEncoding = Encoding.Unicode;
       DialogConv.Run(@"../GameScript/Dialogue.csv", @"../Content/Data");
       MusicConv.Run(@"../GameScript/MusicRoom.csv", @"../Content/Data/6.txt");
       AchiveConv.Run(@"../GameScript/Achivement.csv", @"../Content/Data/9.txt");
-      // SpellA0Conv.Run(@"../GameScript/MusicRoom.csv", @"../Content/Data/6.txt");
+      SpellA0Conv.Run(@"../GameScript/SpellName.csv", @"../GameScript/a0.csv", @"../Content/Data");
    }
 }
