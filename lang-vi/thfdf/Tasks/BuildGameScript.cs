@@ -1,6 +1,4 @@
-//css_precompiler Sub\Preprocessor.cs
 //css_args -provider:%CSSCRIPT_DIR%\lib\CSSRoslynProvider.dll
-//<System.ValueTuple>
 //css_import Sub\DialogConv.cs
 //css_import Sub\MusicConv.cs
 //css_import Sub\AchiveConv.cs
@@ -19,7 +17,6 @@ public class GameScriptBuilder
 {
    static void Main(string[] args)
    {
-      var a = (9, 2);
       Console.OutputEncoding = Encoding.Unicode;
       DialogConv.Run(@"../GameScript/Dialogue.csv", @"../Content/Data");
       MusicConv.Run(@"../GameScript/MusicRoom.csv", @"../Content/Data/6.txt");
