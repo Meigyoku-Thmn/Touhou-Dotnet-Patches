@@ -11,7 +11,22 @@ public class Script
    {
       if (typeof(bool).Assembly.GetType("System.ValueTuple") == null)
       {
-         Console.WriteLine("Hello World");
+         AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(MyResolveEventHandler);
       }
+   }
+   private static Assembly MyResolveEventHandler(object sender, ResolveEventArgs args)
+   {
+      if (args.Name.StartsWith("System.ValueTuple")) {
+         var _CSSUtils = Assembly.GetEntryAssembly().GetType("csscript.CSSUtils");
+         var _GetDirectories = _CSSUtils.GetMethod("GetDirectories");
+         var targetDirPath = ((string[])_GetDirectories.Invoke(null, 
+            new object[] { 
+               Directory.GetCurrentDirectory(), 
+               Environment.ExpandEnvironmentVariables(@"%css_nuget%\CsvHelper\System.ValueTuple*\**\net461") 
+            }
+         ))[0];
+         return Assembly.LoadFile(targetDirPath + @"\System.ValueTuple.dll");
+      }
+      return null;
    }
 }
