@@ -1,4 +1,3 @@
-//css_nuget CsvHelper
 using CsvHelper;
 using CsvHelper.Configuration.Attributes;
 using System;

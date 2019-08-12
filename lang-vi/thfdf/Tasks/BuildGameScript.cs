@@ -1,8 +1,10 @@
 //css_args -provider:%CSSCRIPT_DIR%\lib\CSSRoslynProvider.dll
-//css_import Sub\DialogConv.cs
-//css_import Sub\MusicConv.cs
-//css_import Sub\AchiveConv.cs
-//css_import Sub\SpellA0Conv.cs
+//css_import BuildGameScript\CsvHelper.cs
+//css_prescript BuildGameScript\CsvHelper()
+//css_import BuildGameScript\DialogConv.cs
+//css_import BuildGameScript\MusicConv.cs
+//css_import BuildGameScript\AchiveConv.cs
+//css_import BuildGameScript\SpellA0Conv.cs
 using System;
 using System.Collections.Generic;
 using System.Drawing;

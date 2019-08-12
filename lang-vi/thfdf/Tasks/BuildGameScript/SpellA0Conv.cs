@@ -1,5 +1,4 @@
-﻿﻿//css_nuget CsvHelper
-using CsvHelper;
+﻿﻿using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.Configuration.Attributes;
 using CsvHelper.TypeConversion;
@@ -80,7 +79,7 @@ public class SpellA0Conv {
             var lines = linesCollection[i - 1];
             File.WriteAllText(Path.Combine(outputDirPath, $"s{i}.txt"), string.Join("\r\n", lines), Encoding.UTF8);
          }
-         Console.WriteLine($"{linesCollection.Length} files generated.");
+         Console.WriteLine($" {linesCollection.Length} files generated.");
          var challengeLines = spells
             .Where(spell => spell.Difficulties.Any(diff => diff == Difficulty.Challenge))
             .Select(spell =>
@@ -99,7 +98,7 @@ public class SpellA0Conv {
             })
             ;
          File.WriteAllText(Path.Combine(outputDirPath, $"7.txt"), string.Join("\r\n", challengeLines), Encoding.UTF8);
-         Console.WriteLine($"{Path.Combine(outputDirPath, $"7.txt")} generated.");
+         Console.WriteLine($" {Path.Combine(outputDirPath, $"7.txt")} generated.");
       }
       using (var reader = new StreamReader(new FileStream(a0InputFilePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite)))
       using (var csv = new CsvReader(reader))
@@ -116,7 +115,7 @@ public class SpellA0Conv {
             .ToArray()
             ;
          File.WriteAllText(Path.Combine(outputDirPath, $"a0.txt"), string.Join("\r\n", a0Lines), Encoding.UTF8);
-         Console.WriteLine($"{Path.Combine(outputDirPath, $"a0.txt")} generated.");
+         Console.WriteLine($" {Path.Combine(outputDirPath, $"a0.txt")} generated.");
       }
    }
 }
