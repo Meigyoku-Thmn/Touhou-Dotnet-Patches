@@ -1,6 +1,5 @@
-//css_precompiler Extractor\Preprocessor.cs
 //css_args -provider:%CSSCRIPT_DIR%\lib\CSSRoslynProvider.dll
-//<System.ValueTuple>
+//css_ref %CSSCRIPT_DIR%\lib\Bin\Roslyn\System.ValueTuple.dll
 //css_import Extractor\Decipher.cs
 using System;
 using System.Collections.Generic;

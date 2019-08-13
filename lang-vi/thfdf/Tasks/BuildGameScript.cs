@@ -1,6 +1,9 @@
 //css_args -provider:%CSSCRIPT_DIR%\lib\CSSRoslynProvider.dll
-//css_import BuildGameScript\CsvHelper.cs
-//css_prescript BuildGameScript\CsvHelper()
+//css_nuget -noref CsvHelper
+//css_dir %css_nuget%\CsvHelper\**\net45
+//css_dir %css_nuget%\CsvHelper\System.ValueTuple*\**\net461
+//css_ref CsvHelper.dll
+//css_ref System.ValueTuple.dll
 //css_import BuildGameScript\DialogConv.cs
 //css_import BuildGameScript\MusicConv.cs
 //css_import BuildGameScript\AchiveConv.cs
