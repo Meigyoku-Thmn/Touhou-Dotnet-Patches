@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>thfdf</RootNamespace>
     <AssemblyName>thfdf</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -41,9 +41,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup Condition="$(DefineConstants.Contains('_1_05_en'))">
-    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0" SpecificVersion="true" />
-    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0" SpecificVersion="true" />
-    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0" SpecificVersion="true" />
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0" SpecificVersion="true">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\TouHou Makuka Sai ~ Fantastic Danmaku Festival\Microsoft.Xna.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0" SpecificVersion="true">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\TouHou Makuka Sai ~ Fantastic Danmaku Festival\Microsoft.Xna.Framework.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0" SpecificVersion="true">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\TouHou Makuka Sai ~ Fantastic Danmaku Festival\Microsoft.Xna.Framework.Graphics.dll</HintPath>
+    </Reference>
     <Reference Include="THMHJ, Version=1.0.0.0" SpecificVersion="true">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\TouHou Makuka Sai ~ Fantastic Danmaku Festival\THMHJ.exe</HintPath>
     </Reference>

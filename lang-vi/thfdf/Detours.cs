@@ -92,7 +92,7 @@ namespace DotnetPatching {
       public static void TitleLocationPath(ref string __result) {
          __result = Path.GetDirectoryName(TargetAssembly.Location);
       }
-      static List<ValueTuple<Font, TextRenderingHint>> fontList;
+      static List<(Font, TextRenderingHint)> fontList;
       static bool IfUseFontMod(bool last) {
          var config = Resource.Config;
          var alterTextCfg = config.AlterTextCfg;
