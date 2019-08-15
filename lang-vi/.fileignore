@@ -1,12 +1,14 @@
 # Regular Expression
-lang-vi\.sln
 packages\\.*
 thfdf\\bin\\.*
 thfdf\\obj\\.*
 thfdf\\Properties\\.*
+thfdf\\Tasks\\.*
 thfdf\\.*\.csproj
 \.fileignore
 \.gitignore
 \.vs\\.*
 .*\.psd
 .*\.csv
+.*\.jsonc
+lang-vi\.sln
