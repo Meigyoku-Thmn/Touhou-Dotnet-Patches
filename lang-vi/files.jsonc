@@ -1,13 +1,14 @@
 ﻿{
    // CRC32 Checksum for each file, we use this as a way to know if there is any changed file.
+   "versions.jsonc": 2846648844,
    "thfdf/Custom.cs": 1526447761,
    "thfdf/Custom.Designer.cs": 3038164418,
    "thfdf/Custom.resx": 2578567762,
    "thfdf/Detours.1.04sc.cs": 634712867,
-   "thfdf/Detours.cs": 1008397529,
+   "thfdf/Detours.cs": 4248237653,
    "thfdf/glossary_vn.html": 2116419301,
    "thfdf/Helper.cs": 857229711,
-   "thfdf/Main.cs": 3365281953,
+   "thfdf/Main.cs": 1790988065,
    "thfdf/omake_vn.html": 50521836,
    "thfdf/Precompiler.cs": 3658088492,
    "thfdf/Reentrants.cs": 4247194249,

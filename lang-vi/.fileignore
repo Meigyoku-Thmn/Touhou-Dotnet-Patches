@@ -5,10 +5,10 @@ thfdf\\obj\\.*
 thfdf\\Properties\\.*
 thfdf\\Tasks\\.*
 thfdf\\.*\.csproj
+thfdf\\.*\.jsonc
 \.fileignore
 \.gitignore
 \.vs\\.*
 .*\.psd
 .*\.csv
-.*\.jsonc
 lang-vi\.sln

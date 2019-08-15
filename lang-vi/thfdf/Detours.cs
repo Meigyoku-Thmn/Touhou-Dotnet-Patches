@@ -59,6 +59,8 @@ namespace DotnetPatching {
       }
       public static void newTex(SpriteFontX __instance, ref Texture2D ___CurrentTex2d) {
          _newTex(__instance);
+         var nullOrNot = __instance == null ? "null" : "notnull";
+         nullOrNot.ToString(); // fix __instance == null ???
          charTextures.Add(___CurrentTex2d, __instance);
       }
       public static void Decry(string FileName, int type, ref Stream __result) {
