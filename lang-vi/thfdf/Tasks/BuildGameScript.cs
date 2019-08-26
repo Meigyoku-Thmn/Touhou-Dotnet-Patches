@@ -1,4 +1,3 @@
-//css_args -provider:%CSSCRIPT_DIR%\lib\CSSRoslynProvider.dll
 //css_nuget -noref CsvHelper
 //css_dir %css_nuget%\CsvHelper\**\net45
 //css_dir %css_nuget%\CsvHelper\System.ValueTuple*\**\net461

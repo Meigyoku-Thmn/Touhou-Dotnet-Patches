@@ -1,1 +1,1 @@
-cscs -l:0 Extractor.cs
+cscs Extractor.cs

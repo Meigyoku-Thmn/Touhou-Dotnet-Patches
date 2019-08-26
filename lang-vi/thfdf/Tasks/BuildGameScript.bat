@@ -1,1 +1,1 @@
-cscs -l:0 BuildGameScript.cs
+cscs -provider:%CSSCRIPT_DIR%\lib\CSSRoslynProvider.dll BuildGameScript.cs

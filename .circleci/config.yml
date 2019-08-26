@@ -1,0 +1,40 @@
+version: 2
+jobs:
+  build-gamescript-and-filelist:
+    docker:
+      - image: meigyokuthmn/stretch:node-csscript
+        environment: 
+          css_nuget: /css_nuget
+    steps:
+      - checkout # pull this repo
+      - run:
+          name: Run init-env.sh inline
+          command: . ./.circleci/init-env.sh
+      - restore_cache: # try to restore the most recent cache
+          keys:
+            - csscript-cache-{{ .Branch }}
+      - run: 
+          name: Try to create nuget folder for csscript
+          command: mkdir -p /css_nuget
+      - run:
+          name: Generate checksum file for all scripts in Tasks folder
+          command: find ./lang-vi/thfdf/Tasks -type f -print0 | sort -z | xargs -0 sha1sum > /script_checksum.txt
+      - run: 
+          name: Print Cs-Script version
+          command: mono /usr/bin/cscs -v
+      - run: 
+          name: Validate the BuildGameScript script
+          command: mono /usr/bin/cscs -check ./lang-vi/thfdf/Tasks/BuildGameScript.cs
+      - run: 
+          name: Run BuildGameScript
+          command: mono /usr/bin/cscs ./lang-vi/thfdf/Tasks/BuildGameScript.cs
+      - save_cache: # save the current cache files using the checksum code of script_checksum.txt as key
+          key: csscript-cache-{{ .Branch }}-{{ checksum "/script_checksum.txt" }}
+          paths:
+            - /css_nuget # nuget folder
+            - /tmp/CSSCRIPT # script complilation cache folder
+workflows:
+  version: 2
+  test-build:
+    jobs:
+      - build-gamescript-and-filelist

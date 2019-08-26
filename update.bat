@@ -1,1 +1,1 @@
-cscs -l:0 Dotnet-Runtime-Patcher/Update-Files.cs
+cscs -l:0 -provider:%CSSCRIPT_DIR%\lib\CSSRoslynProvider.dll -dir:%CSSCRIPT_DIR%\lib\Bin\Roslyn -r:System.ValueTuple.dll Dotnet-Runtime-Patcher/Update-Files.cs
