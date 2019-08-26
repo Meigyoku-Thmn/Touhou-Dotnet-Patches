@@ -7,15 +7,15 @@ jobs:
           css_nuget: /css_nuget
     steps:
       - checkout # pull this repo
-      - run:
-          name: Run init-env.sh inline
-          command: . ./.circleci/init-env.sh
       - restore_cache: # try to restore the most recent cache
           keys:
             - csscript-cache-{{ .Branch }}
-      - run: 
-          name: Try to create nuget folder for csscript
-          command: mkdir -p /css_nuget
+      - run:
+          name: Setup enviroment
+          command: |
+            . ./.circleci/init-env.sh
+            echo "Try to create nuget folder for csscript"
+            mkdir -p /css_nuget
       - run:
           name: Generate checksum file for all scripts in Tasks folder
           command: find ./lang-vi/thfdf/Tasks -type f -print0 | sort -z | xargs -0 sha1sum > /script_checksum.txt
@@ -23,16 +23,37 @@ jobs:
           name: Print Cs-Script version
           command: mono /usr/bin/cscs -v
       - run: 
-          name: Validate the BuildGameScript script
-          command: mono /usr/bin/cscs -check ./lang-vi/thfdf/Tasks/BuildGameScript.cs
-      - run: 
           name: Run BuildGameScript
-          command: mono /usr/bin/cscs ./lang-vi/thfdf/Tasks/BuildGameScript.cs
+          command: | 
+            mono /usr/bin/cscs -check ./lang-vi/thfdf/Tasks/BuildGameScript.cs
+            mono /usr/bin/cscs ./lang-vi/thfdf/Tasks/BuildGameScript.cs
+      - run: 
+          name: Pull Dotnet-Runtime-Patcher submodule
+          command: git submodule update --init
+      - run:
+          name: Run Update-Files
+          command: |
+            mono /usr/bin/cscs -check ./Dotnet-Runtime-Patcher/Update-Files.cs
+            mono /usr/bin/cscs ./Dotnet-Runtime-Patcher/Update-Files.cs
       - save_cache: # save the current cache files using the checksum code of script_checksum.txt as key
           key: csscript-cache-{{ .Branch }}-{{ checksum "/script_checksum.txt" }}
           paths:
             - /css_nuget # nuget folder
             - /tmp/CSSCRIPT # script complilation cache folder
+      - run: 
+          # https://support.circleci.com/hc/en-us/articles/360018860473-How-to-push-a-commit-back-to-the-same-repository-as-part-of-the-CircleCI-job
+          name: Push build if there is any change
+          command: |
+            CHANGED=`git status -s`
+            if [ -z "$CHANGED" ]; then
+              echo "Nothing change, skip pushing"
+            else
+              git config user.email $GITHUB_MY_EMAIL
+              git config user.name $GITHUB_MY_NAME
+              git add -u
+              git commit -m "[skip ci]Auto build game script and file list description"
+              git push
+            fi
 workflows:
   version: 2
   test-build:
