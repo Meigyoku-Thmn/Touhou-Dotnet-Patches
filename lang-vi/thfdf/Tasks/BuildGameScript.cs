@@ -1,11 +1,11 @@
 //css_nuget -noref CsvHelper
-//css_dir %css_nuget%\CsvHelper\**\net45
-//css_dir %css_nuget%\CsvHelper\System.ValueTuple*\**\net461
+//css_dir %css_nuget%/CsvHelper/**/net45
+//css_dir %css_nuget%/CsvHelper/System.ValueTuple*/**/net461
 //css_ref CsvHelper.dll
-//css_import BuildGameScript\DialogConv.cs
-//css_import BuildGameScript\MusicConv.cs
-//css_import BuildGameScript\AchiveConv.cs
-//css_import BuildGameScript\SpellA0Conv.cs
+//css_import BuildGameScript/DialogConv.cs
+//css_import BuildGameScript/MusicConv.cs
+//css_import BuildGameScript/AchiveConv.cs
+//css_import BuildGameScript/SpellA0Conv.cs
 using System;
 using System.Collections.Generic;
 using System.Drawing;

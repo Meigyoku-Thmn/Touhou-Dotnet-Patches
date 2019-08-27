@@ -1,14 +1,15 @@
 # Regular Expression
-packages\\.*
-thfdf\\bin\\.*
-thfdf\\obj\\.*
-thfdf\\Properties\\.*
-thfdf\\Tasks\\.*
-thfdf\\.*\.csproj
-thfdf\\.*\.jsonc
+# Please use forward slash as directory seperator character
+packages/.*
+thfdf/bin/.*
+thfdf/obj/.*
+thfdf/Properties/.*
+thfdf/Tasks/.*
+thfdf/.*\.csproj
+thfdf/.*\.jsonc
 \.fileignore
 \.gitignore
-\.vs\\.*
+\.vs/.*
 .*\.psd
 .*\.csv
 lang-vi\.sln

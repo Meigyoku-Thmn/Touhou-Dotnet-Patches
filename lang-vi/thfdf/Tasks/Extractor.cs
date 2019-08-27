@@ -1,7 +1,8 @@
-//css_args -provider:%CSSCRIPT_DIR%\lib\CSSRoslynProvider.dll
-//css_dir %CSSCRIPT_DIR%\lib\Bin\Roslyn
+//css_args -provider:%CSSCRIPT_DIR%/lib/CSSRoslynProvider.dll
+//css_dir %CSSCRIPT_DIR%/lib/Bin/Roslyn
 //css_ref System.ValueTuple.dll
-//css_import Extractor\Decipher.cs
+//css_import Extractor/Decipher.cs
+// This script is intended to be executed only on Windows
 using System;
 using System.Collections.Generic;
 using System.Drawing;
