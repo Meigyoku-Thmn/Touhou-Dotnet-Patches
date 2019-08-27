@@ -20,7 +20,7 @@ public class GameScriptBuilder
 {
    static void Main(string[] args)
    {
-      Console.OutputEncoding = Encoding.Unicode;
+      Console.OutputEncoding = Encoding.UTF8;
       DialogConv.Run(@"../GameScript/Dialogue.csv", @"../Content/Data");
       MusicConv.Run(@"../GameScript/MusicRoom.csv", @"../Content/Data/6.txt");
       AchiveConv.Run(@"../GameScript/Achivement.csv", @"../Content/Data/9.txt");
