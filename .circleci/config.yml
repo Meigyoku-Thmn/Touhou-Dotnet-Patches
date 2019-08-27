@@ -33,8 +33,8 @@ jobs:
       - run:
           name: Run Update-Files
           command: |
-            mono /usr/bin/cscs -check ./Dotnet-Runtime-Patcher/Update-Files.cs
-            mono /usr/bin/cscs ./Dotnet-Runtime-Patcher/Update-Files.cs
+            mono /usr/bin/cscs -l:0 -check ./Dotnet-Runtime-Patcher/Update-Files.cs
+            mono /usr/bin/cscs -l:0 ./Dotnet-Runtime-Patcher/Update-Files.cs
       - save_cache: # save the current cache files using the checksum code of script_checksum.txt as key
           key: csscript-cache-{{ .Branch }}-{{ checksum "/script_checksum.txt" }}
           paths:
