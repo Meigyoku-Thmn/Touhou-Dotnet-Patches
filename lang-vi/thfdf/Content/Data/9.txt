@@ -21,13 +21,13 @@ Người sống sót sau Bão táp：Chỉ né trong spell Hồng Dạ "Xoáy n�
 Nổ san bằng Ảo Tưởng Hương：Hạ gục BOSS bất kì mà chỉ sử dụng BOMB ở độ khó bất kì.
 Tràn đầy Tự tin：Hạ gục BOSS bất kì cuối màn từ sau Stage 1 trở đi ở độ khó cao nhất mà không sử dụng BOMB.
 Chất đầy mà Về：Bắt được tất cả spellcard ở độ khó bất kì từ Normal trở lên bằng nhân vật bất kì.
-Bắt hết Spellcard Khiêu chiến：Bắt được tất cả spellcard trong Spellcard Challenge bằng nhân vật bất kì.
+Bắt hết Spellcard Khiêu chiến：Bắt được tất cả spellcard trong mục 'Spellcard Khiêu chiến' bằng nhân vật bất kì.
 8
 Nghị lực Đáng sợ：Số lần chơi nhân vật bất kì ít nhất 100 lần.
 Bất chùn Bất khuất：Phá ván game dưới tình huống không thể continue nữa ở độ khó bất kì.
 Cùng đường Bí lối：Cố tránh đạn trong ít nhất 10 giây ở phần trên màn hình ở spellcard bất kì.
 Một cái cũng Không để rơi：Hút điểm ít nhất 50 lần trong vùng thu thập item trong một phần chơi.
-Sượt đạn Thấy Khoái cảm：Số đạn sượt ít nhất 20000 trong một phần chơi.
+Sượt đạn Thấy Khoái cảm：Số đạn sượt ít nhất 20000 lần trong một phần chơi.
 Si cuồng Đạn mạc：Tổng thời gian các phần chơi ít nhất 30 giờ.
-Âm nhạc Chính là Cuộc sống：Lưu lại trong Music Room ít nhất 30 phút.
-Mài sắt Nên kim：Bắt được spellcard khiêu chiến bất kì ít nhất một lần khi đã khiêu chiến spellcard đó ít nhất 100 lần.
+Âm nhạc Chính là Cuộc sống：Nán lại trong Music Room ít nhất 30 phút.
+Mài sắt Nên kim：Bắt được 'spellcard khiêu chiến' bất kì ít nhất một lần khi đã khiêu chiến spellcard đó ít nhất 100 lần.
