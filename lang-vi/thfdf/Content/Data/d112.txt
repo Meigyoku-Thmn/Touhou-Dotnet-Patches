@@ -9,7 +9,7 @@ MUSIC
 PAUSE
 敌01]Không ngờ rằng lợi hại như vậy.
 自2]Khà khà, không tốn mảy may sức lực.
-敌00]Ngươi thì là có bị cái hơi khí kỳ lạ hấp dẫn mà đến đây không?
-自4]Ta thì là đến điều tra dị biến mà.
+敌00]Ngươi thì có bị cái hơi khí kỳ lạ hấp dẫn mà đến đây không?
+自4]Ta đến điều tra dị biến mà.
 敌00]Theo ta quan sát, thì tòa dương quán đằng xa kia rất khả nghi đó.
 自0]Nơi đó sao? Quen thuộc quá rồi!
